@@ -909,8 +909,9 @@ void protobuf_AssignDesc_messages_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type7Message, _internal_metadata_),
       -1);
   Type8Message_descriptor_ = file->message_type(7);
-  static const int Type8Message_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type8Message, data_),
+  static const int Type8Message_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type8Message, data1_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type8Message, data2_),
   };
   Type8Message_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -924,8 +925,10 @@ void protobuf_AssignDesc_messages_2eproto() {
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type8Message, _internal_metadata_),
       -1);
   Type9Message_descriptor_ = file->message_type(8);
-  static const int Type9Message_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type9Message, data_),
+  static const int Type9Message_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type9Message, data1_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type9Message, data2_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Type9Message, data3_),
   };
   Type9Message_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -5717,209 +5720,210 @@ void protobuf_AddDesc_messages_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\016messages.proto\022\005tests\"\034\n\014Type1Message\022"
     "\014\n\004data\030\001 \001(\005\"\034\n\014Type2Message\022\014\n\004data\030\001 "
-    "\001(\003\"\034\n\014Type3Message\022\014\n\004data\030\001 \001(\t\"\034\n\014Typ"
+    "\001(\003\"\034\n\014Type3Message\022\014\n\004data\030\001 \001(\010\"\034\n\014Typ"
     "e4Message\022\014\n\004data\030\001 \001(\002\"\034\n\014Type5Message\022"
-    "\014\n\004data\030\001 \001(\t\"\034\n\014Type6Message\022\014\n\004data\030\001 "
-    "\001(\t\"\034\n\014Type7Message\022\014\n\004data\030\001 \001(\t\"\034\n\014Typ"
-    "e8Message\022\014\n\004data\030\001 \001(\t\"\034\n\014Type9Message\022"
-    "\014\n\004data\030\001 \001(\t\"9\n\023SimpleClientMessage\022\021\n\t"
-    "timestamp\030\001 \002(\005\022\017\n\007payload\030\002 \001(\t\"\035\n\rType"
-    "10Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType11Message"
-    "\022\014\n\004data\030\001 \001(\t\"\035\n\rType12Message\022\014\n\004data\030"
-    "\001 \001(\t\"\035\n\rType13Message\022\014\n\004data\030\001 \001(\t\"\035\n\r"
-    "Type14Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType15Mes"
-    "sage\022\014\n\004data\030\001 \001(\t\"\035\n\rType16Message\022\014\n\004d"
-    "ata\030\001 \001(\t\"\035\n\rType17Message\022\014\n\004data\030\001 \001(\t"
-    "\"\035\n\rType18Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType1"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType20Message\022"
-    "\014\n\004data\030\001 \001(\t\"\035\n\rType21Message\022\014\n\004data\030\001"
-    " \001(\t\"\035\n\rType22Message\022\014\n\004data\030\001 \001(\t\"\035\n\rT"
-    "ype23Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType24Mess"
-    "age\022\014\n\004data\030\001 \001(\t\"\035\n\rType25Message\022\014\n\004da"
-    "ta\030\001 \001(\t\"\035\n\rType26Message\022\014\n\004data\030\001 \001(\t\""
-    "\035\n\rType27Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType28"
-    "Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType29Message\022\014"
-    "\n\004data\030\001 \001(\t\"\035\n\rType30Message\022\014\n\004data\030\001 "
-    "\001(\t\"\035\n\rType31Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTy"
-    "pe32Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType33Messa"
-    "ge\022\014\n\004data\030\001 \001(\t\"\035\n\rType34Message\022\014\n\004dat"
-    "a\030\001 \001(\t\"\035\n\rType35Message\022\014\n\004data\030\001 \001(\t\"\035"
-    "\n\rType36Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType37M"
-    "essage\022\014\n\004data\030\001 \001(\t\"\035\n\rType38Message\022\014\n"
-    "\004data\030\001 \001(\t\"\035\n\rType39Message\022\014\n\004data\030\001 \001"
-    "(\t\"\035\n\rType40Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTyp"
-    "e41Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType42Messag"
-    "e\022\014\n\004data\030\001 \001(\t\"\035\n\rType43Message\022\014\n\004data"
-    "\030\001 \001(\t\"\035\n\rType44Message\022\014\n\004data\030\001 \001(\t\"\035\n"
-    "\rType45Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType46Me"
-    "ssage\022\014\n\004data\030\001 \001(\t\"\035\n\rType47Message\022\014\n\004"
-    "data\030\001 \001(\t\"\035\n\rType48Message\022\014\n\004data\030\001 \001("
-    "\t\"\035\n\rType49Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType"
-    "50Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType51Message"
-    "\022\014\n\004data\030\001 \001(\t\"\035\n\rType52Message\022\014\n\004data\030"
-    "\001 \001(\t\"\035\n\rType53Message\022\014\n\004data\030\001 \001(\t\"\035\n\r"
-    "Type54Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType55Mes"
-    "sage\022\014\n\004data\030\001 \001(\t\"\035\n\rType56Message\022\014\n\004d"
-    "ata\030\001 \001(\t\"\035\n\rType57Message\022\014\n\004data\030\001 \001(\t"
-    "\"\035\n\rType58Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType5"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType60Message\022"
-    "\014\n\004data\030\001 \001(\t\"\035\n\rType61Message\022\014\n\004data\030\001"
-    " \001(\t\"\035\n\rType62Message\022\014\n\004data\030\001 \001(\t\"\035\n\rT"
-    "ype63Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType64Mess"
-    "age\022\014\n\004data\030\001 \001(\t\"\035\n\rType65Message\022\014\n\004da"
-    "ta\030\001 \001(\t\"\035\n\rType66Message\022\014\n\004data\030\001 \001(\t\""
-    "\035\n\rType67Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType68"
-    "Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType69Message\022\014"
-    "\n\004data\030\001 \001(\t\"\035\n\rType70Message\022\014\n\004data\030\001 "
-    "\001(\t\"\035\n\rType71Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTy"
-    "pe72Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType73Messa"
-    "ge\022\014\n\004data\030\001 \001(\t\"\035\n\rType74Message\022\014\n\004dat"
-    "a\030\001 \001(\t\"\035\n\rType75Message\022\014\n\004data\030\001 \001(\t\"\035"
-    "\n\rType76Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType77M"
-    "essage\022\014\n\004data\030\001 \001(\t\"\035\n\rType78Message\022\014\n"
-    "\004data\030\001 \001(\t\"\035\n\rType79Message\022\014\n\004data\030\001 \001"
-    "(\t\"\035\n\rType80Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTyp"
-    "e81Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType82Messag"
-    "e\022\014\n\004data\030\001 \001(\t\"\035\n\rType83Message\022\014\n\004data"
-    "\030\001 \001(\t\"\035\n\rType84Message\022\014\n\004data\030\001 \001(\t\"\035\n"
-    "\rType85Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType86Me"
-    "ssage\022\014\n\004data\030\001 \001(\t\"\035\n\rType87Message\022\014\n\004"
-    "data\030\001 \001(\t\"\035\n\rType88Message\022\014\n\004data\030\001 \001("
-    "\t\"\035\n\rType89Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType"
-    "90Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType91Message"
-    "\022\014\n\004data\030\001 \001(\t\"\035\n\rType92Message\022\014\n\004data\030"
-    "\001 \001(\t\"\035\n\rType93Message\022\014\n\004data\030\001 \001(\t\"\035\n\r"
-    "Type94Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType95Mes"
-    "sage\022\014\n\004data\030\001 \001(\t\"\035\n\rType96Message\022\014\n\004d"
-    "ata\030\001 \001(\t\"\035\n\rType97Message\022\014\n\004data\030\001 \001(\t"
-    "\"\035\n\rType98Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType9"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type100Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type101Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type102Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type103Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type10"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type105Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type106Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type107Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type108Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type10"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type110Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type111Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type112Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type113Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type11"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type115Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type116Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type117Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type118Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type11"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type120Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type121Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type122Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type123Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type12"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type125Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type126Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type127Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type128Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type12"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type130Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type131Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type132Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type133Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type13"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type135Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type136Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type137Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type138Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type13"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type140Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type141Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type142Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type143Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type14"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type145Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type146Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type147Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type148Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type14"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type150Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type151Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type152Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type153Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type15"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type155Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type156Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type157Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type158Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type15"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type160Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type161Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type162Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type163Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type16"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type165Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type166Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type167Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type168Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type16"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type170Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type171Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type172Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type173Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type17"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type175Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type176Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type177Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type178Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type17"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type180Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type181Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type182Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type183Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type18"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type185Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type186Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type187Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type188Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type18"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type190Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type191Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type192Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type193Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type19"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type195Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type196Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type197Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type198Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type19"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type200Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type201Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type202Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type203Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type20"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type205Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type206Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type207Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type208Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type20"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type210Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type211Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type212Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type213Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type21"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type215Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type216Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type217Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type218Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type21"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type220Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type221Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type222Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type223Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type22"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type225Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type226Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type227Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type228Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type22"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type230Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type231Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type232Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type233Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type23"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type235Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type236Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type237Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type238Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type23"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type240Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type241Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type242Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type243Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type24"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type245Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type246Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type247Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type248Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type24"
-    "9Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type250Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type251Message\022\014\n\004data"
-    "\030\001 \001(\t\"\036\n\016Type252Message\022\014\n\004data\030\001 \001(\t\"\036"
-    "\n\016Type253Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type25"
-    "4Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type255Message"
-    "\022\014\n\004data\030\001 \001(\t\"\036\n\016Type256Message\022\014\n\004data"
-    "\030\001 \001(\t", 8166);
+    "\014\n\004data\030\001 \001(\001\"\034\n\014Type6Message\022\014\n\004data\030\001 "
+    "\001(\014\"\034\n\014Type7Message\022\014\n\004data\030\001 \001(\t\",\n\014Typ"
+    "e8Message\022\r\n\005data1\030\001 \001(\005\022\r\n\005data2\030\002 \001(\003\""
+    ";\n\014Type9Message\022\r\n\005data1\030\001 \001(\005\022\r\n\005data2\030"
+    "\002 \001(\005\022\r\n\005data3\030\003 \001(\005\"9\n\023SimpleClientMess"
+    "age\022\021\n\ttimestamp\030\001 \002(\005\022\017\n\007payload\030\002 \001(\t\""
+    "\035\n\rType10Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType11"
+    "Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType12Message\022\014"
+    "\n\004data\030\001 \001(\t\"\035\n\rType13Message\022\014\n\004data\030\001 "
+    "\001(\t\"\035\n\rType14Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTy"
+    "pe15Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType16Messa"
+    "ge\022\014\n\004data\030\001 \001(\t\"\035\n\rType17Message\022\014\n\004dat"
+    "a\030\001 \001(\t\"\035\n\rType18Message\022\014\n\004data\030\001 \001(\t\"\035"
+    "\n\rType19Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType20M"
+    "essage\022\014\n\004data\030\001 \001(\t\"\035\n\rType21Message\022\014\n"
+    "\004data\030\001 \001(\t\"\035\n\rType22Message\022\014\n\004data\030\001 \001"
+    "(\t\"\035\n\rType23Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTyp"
+    "e24Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType25Messag"
+    "e\022\014\n\004data\030\001 \001(\t\"\035\n\rType26Message\022\014\n\004data"
+    "\030\001 \001(\t\"\035\n\rType27Message\022\014\n\004data\030\001 \001(\t\"\035\n"
+    "\rType28Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType29Me"
+    "ssage\022\014\n\004data\030\001 \001(\t\"\035\n\rType30Message\022\014\n\004"
+    "data\030\001 \001(\t\"\035\n\rType31Message\022\014\n\004data\030\001 \001("
+    "\t\"\035\n\rType32Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType"
+    "33Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType34Message"
+    "\022\014\n\004data\030\001 \001(\t\"\035\n\rType35Message\022\014\n\004data\030"
+    "\001 \001(\t\"\035\n\rType36Message\022\014\n\004data\030\001 \001(\t\"\035\n\r"
+    "Type37Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType38Mes"
+    "sage\022\014\n\004data\030\001 \001(\t\"\035\n\rType39Message\022\014\n\004d"
+    "ata\030\001 \001(\t\"\035\n\rType40Message\022\014\n\004data\030\001 \001(\t"
+    "\"\035\n\rType41Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType4"
+    "2Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType43Message\022"
+    "\014\n\004data\030\001 \001(\t\"\035\n\rType44Message\022\014\n\004data\030\001"
+    " \001(\t\"\035\n\rType45Message\022\014\n\004data\030\001 \001(\t\"\035\n\rT"
+    "ype46Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType47Mess"
+    "age\022\014\n\004data\030\001 \001(\t\"\035\n\rType48Message\022\014\n\004da"
+    "ta\030\001 \001(\t\"\035\n\rType49Message\022\014\n\004data\030\001 \001(\t\""
+    "\035\n\rType50Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType51"
+    "Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType52Message\022\014"
+    "\n\004data\030\001 \001(\t\"\035\n\rType53Message\022\014\n\004data\030\001 "
+    "\001(\t\"\035\n\rType54Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTy"
+    "pe55Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType56Messa"
+    "ge\022\014\n\004data\030\001 \001(\t\"\035\n\rType57Message\022\014\n\004dat"
+    "a\030\001 \001(\t\"\035\n\rType58Message\022\014\n\004data\030\001 \001(\t\"\035"
+    "\n\rType59Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType60M"
+    "essage\022\014\n\004data\030\001 \001(\t\"\035\n\rType61Message\022\014\n"
+    "\004data\030\001 \001(\t\"\035\n\rType62Message\022\014\n\004data\030\001 \001"
+    "(\t\"\035\n\rType63Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTyp"
+    "e64Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType65Messag"
+    "e\022\014\n\004data\030\001 \001(\t\"\035\n\rType66Message\022\014\n\004data"
+    "\030\001 \001(\t\"\035\n\rType67Message\022\014\n\004data\030\001 \001(\t\"\035\n"
+    "\rType68Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType69Me"
+    "ssage\022\014\n\004data\030\001 \001(\t\"\035\n\rType70Message\022\014\n\004"
+    "data\030\001 \001(\t\"\035\n\rType71Message\022\014\n\004data\030\001 \001("
+    "\t\"\035\n\rType72Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType"
+    "73Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType74Message"
+    "\022\014\n\004data\030\001 \001(\t\"\035\n\rType75Message\022\014\n\004data\030"
+    "\001 \001(\t\"\035\n\rType76Message\022\014\n\004data\030\001 \001(\t\"\035\n\r"
+    "Type77Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType78Mes"
+    "sage\022\014\n\004data\030\001 \001(\t\"\035\n\rType79Message\022\014\n\004d"
+    "ata\030\001 \001(\t\"\035\n\rType80Message\022\014\n\004data\030\001 \001(\t"
+    "\"\035\n\rType81Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType8"
+    "2Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType83Message\022"
+    "\014\n\004data\030\001 \001(\t\"\035\n\rType84Message\022\014\n\004data\030\001"
+    " \001(\t\"\035\n\rType85Message\022\014\n\004data\030\001 \001(\t\"\035\n\rT"
+    "ype86Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType87Mess"
+    "age\022\014\n\004data\030\001 \001(\t\"\035\n\rType88Message\022\014\n\004da"
+    "ta\030\001 \001(\t\"\035\n\rType89Message\022\014\n\004data\030\001 \001(\t\""
+    "\035\n\rType90Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType91"
+    "Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType92Message\022\014"
+    "\n\004data\030\001 \001(\t\"\035\n\rType93Message\022\014\n\004data\030\001 "
+    "\001(\t\"\035\n\rType94Message\022\014\n\004data\030\001 \001(\t\"\035\n\rTy"
+    "pe95Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType96Messa"
+    "ge\022\014\n\004data\030\001 \001(\t\"\035\n\rType97Message\022\014\n\004dat"
+    "a\030\001 \001(\t\"\035\n\rType98Message\022\014\n\004data\030\001 \001(\t\"\035"
+    "\n\rType99Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type100"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type101Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type102Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type103Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type104Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type105"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type106Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type107Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type108Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type109Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type110"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type111Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type112Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type113Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type114Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type115"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type116Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type117Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type118Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type119Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type120"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type121Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type122Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type123Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type124Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type125"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type126Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type127Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type128Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type129Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type130"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type131Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type132Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type133Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type134Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type135"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type136Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type137Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type138Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type139Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type140"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type141Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type142Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type143Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type144Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type145"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type146Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type147Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type148Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type149Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type150"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type151Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type152Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type153Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type154Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type155"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type156Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type157Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type158Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type159Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type160"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type161Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type162Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type163Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type164Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type165"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type166Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type167Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type168Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type169Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type170"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type171Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type172Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type173Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type174Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type175"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type176Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type177Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type178Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type179Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type180"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type181Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type182Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type183Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type184Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type185"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type186Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type187Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type188Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type189Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type190"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type191Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type192Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type193Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type194Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type195"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type196Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type197Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type198Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type199Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type200"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type201Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type202Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type203Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type204Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type205"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type206Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type207Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type208Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type209Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type210"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type211Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type212Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type213Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type214Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type215"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type216Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type217Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type218Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type219Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type220"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type221Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type222Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type223Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type224Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type225"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type226Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type227Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type228Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type229Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type230"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type231Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type232Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type233Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type234Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type235"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type236Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type237Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type238Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type239Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type240"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type241Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type242Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type243Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type244Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type245"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type246Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type247Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type248Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type249Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type250"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type251Message\022"
+    "\014\n\004data\030\001 \001(\t\"\036\n\016Type252Message\022\014\n\004data\030"
+    "\001 \001(\t\"\036\n\016Type253Message\022\014\n\004data\030\001 \001(\t\"\036\n"
+    "\016Type254Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type255"
+    "Message\022\014\n\004data\030\001 \001(\t\"\036\n\016Type256Message\022"
+    "\014\n\004data\030\001 \001(\t", 8213);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "messages.proto", &protobuf_RegisterTypes);
   Type1Message::default_instance_ = new Type1Message();
@@ -7012,9 +7016,8 @@ Type3Message::Type3Message(const Type3Message& from)
 }
 
 void Type3Message::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -7024,7 +7027,6 @@ Type3Message::~Type3Message() {
 }
 
 void Type3Message::SharedDtor() {
-  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -7056,9 +7058,7 @@ Type3Message* Type3Message::New(::google::protobuf::Arena* arena) const {
 
 void Type3Message::Clear() {
 // @@protoc_insertion_point(message_clear_start:tests.Type3Message)
-  if (has_data()) {
-    data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
+  data_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   if (_internal_metadata_.have_unknown_fields()) {
     mutable_unknown_fields()->Clear();
@@ -7075,15 +7075,13 @@ bool Type3Message::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string data = 1;
+      // optional bool data = 1;
       case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_data()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->data().data(), this->data().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "tests.Type3Message.data");
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &data_)));
+          set_has_data();
         } else {
           goto handle_unusual;
         }
@@ -7116,14 +7114,9 @@ failure:
 void Type3Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:tests.Type3Message)
-  // optional string data = 1;
+  // optional bool data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type3Message.data");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->data(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->data(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7136,15 +7129,9 @@ void Type3Message::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Type3Message::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tests.Type3Message)
-  // optional string data = 1;
+  // optional bool data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type3Message.data");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->data(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->data(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7159,11 +7146,9 @@ int Type3Message::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:tests.Type3Message)
   int total_size = 0;
 
-  // optional string data = 1;
+  // optional bool data = 1;
   if (has_data()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->data());
+    total_size += 1 + 1;
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7201,8 +7186,7 @@ void Type3Message::MergeFrom(const Type3Message& from) {
   }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_data()) {
-      set_has_data();
-      data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+      set_data(from.data());
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
@@ -7234,7 +7218,7 @@ void Type3Message::Swap(Type3Message* other) {
   InternalSwap(other);
 }
 void Type3Message::InternalSwap(Type3Message* other) {
-  data_.Swap(&other->data_);
+  std::swap(data_, other->data_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -7251,7 +7235,7 @@ void Type3Message::InternalSwap(Type3Message* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Type3Message
 
-// optional string data = 1;
+// optional bool data = 1;
 bool Type3Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -7262,47 +7246,17 @@ void Type3Message::clear_has_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
 void Type3Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = false;
   clear_has_data();
 }
- const ::std::string& Type3Message::data() const {
+ bool Type3Message::data() const {
   // @@protoc_insertion_point(field_get:tests.Type3Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return data_;
 }
- void Type3Message::set_data(const ::std::string& value) {
+ void Type3Message::set_data(bool value) {
   set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  data_ = value;
   // @@protoc_insertion_point(field_set:tests.Type3Message.data)
-}
- void Type3Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type3Message.data)
-}
- void Type3Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type3Message.data)
-}
- ::std::string* Type3Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type3Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* Type3Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type3Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void Type3Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type3Message.data)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -7600,9 +7554,8 @@ Type5Message::Type5Message(const Type5Message& from)
 }
 
 void Type5Message::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -7612,7 +7565,6 @@ Type5Message::~Type5Message() {
 }
 
 void Type5Message::SharedDtor() {
-  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -7644,9 +7596,7 @@ Type5Message* Type5Message::New(::google::protobuf::Arena* arena) const {
 
 void Type5Message::Clear() {
 // @@protoc_insertion_point(message_clear_start:tests.Type5Message)
-  if (has_data()) {
-    data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
+  data_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   if (_internal_metadata_.have_unknown_fields()) {
     mutable_unknown_fields()->Clear();
@@ -7663,15 +7613,13 @@ bool Type5Message::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string data = 1;
+      // optional double data = 1;
       case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_data()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->data().data(), this->data().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "tests.Type5Message.data");
+        if (tag == 9) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &data_)));
+          set_has_data();
         } else {
           goto handle_unusual;
         }
@@ -7704,14 +7652,9 @@ failure:
 void Type5Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:tests.Type5Message)
-  // optional string data = 1;
+  // optional double data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type5Message.data");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->data(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->data(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7724,15 +7667,9 @@ void Type5Message::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Type5Message::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tests.Type5Message)
-  // optional string data = 1;
+  // optional double data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type5Message.data");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->data(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->data(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7747,11 +7684,9 @@ int Type5Message::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:tests.Type5Message)
   int total_size = 0;
 
-  // optional string data = 1;
+  // optional double data = 1;
   if (has_data()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->data());
+    total_size += 1 + 8;
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7789,8 +7724,7 @@ void Type5Message::MergeFrom(const Type5Message& from) {
   }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_data()) {
-      set_has_data();
-      data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+      set_data(from.data());
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
@@ -7822,7 +7756,7 @@ void Type5Message::Swap(Type5Message* other) {
   InternalSwap(other);
 }
 void Type5Message::InternalSwap(Type5Message* other) {
-  data_.Swap(&other->data_);
+  std::swap(data_, other->data_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -7839,7 +7773,7 @@ void Type5Message::InternalSwap(Type5Message* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Type5Message
 
-// optional string data = 1;
+// optional double data = 1;
 bool Type5Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -7850,47 +7784,17 @@ void Type5Message::clear_has_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
 void Type5Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = 0;
   clear_has_data();
 }
- const ::std::string& Type5Message::data() const {
+ double Type5Message::data() const {
   // @@protoc_insertion_point(field_get:tests.Type5Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return data_;
 }
- void Type5Message::set_data(const ::std::string& value) {
+ void Type5Message::set_data(double value) {
   set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  data_ = value;
   // @@protoc_insertion_point(field_set:tests.Type5Message.data)
-}
- void Type5Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type5Message.data)
-}
- void Type5Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type5Message.data)
-}
- ::std::string* Type5Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type5Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* Type5Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type5Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void Type5Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type5Message.data)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -7982,15 +7886,11 @@ bool Type6Message::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string data = 1;
+      // optional bytes data = 1;
       case 1: {
         if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_data()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->data().data(), this->data().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "tests.Type6Message.data");
         } else {
           goto handle_unusual;
         }
@@ -8023,13 +7923,9 @@ failure:
 void Type6Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:tests.Type6Message)
-  // optional string data = 1;
+  // optional bytes data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type6Message.data");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       1, this->data(), output);
   }
 
@@ -8043,14 +7939,10 @@ void Type6Message::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Type6Message::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tests.Type6Message)
-  // optional string data = 1;
+  // optional bytes data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type6Message.data");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         1, this->data(), target);
   }
 
@@ -8066,10 +7958,10 @@ int Type6Message::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:tests.Type6Message)
   int total_size = 0;
 
-  // optional string data = 1;
+  // optional bytes data = 1;
   if (has_data()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->data());
   }
 
@@ -8158,7 +8050,7 @@ void Type6Message::InternalSwap(Type6Message* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Type6Message
 
-// optional string data = 1;
+// optional bytes data = 1;
 bool Type6Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -8186,7 +8078,7 @@ void Type6Message::clear_data() {
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:tests.Type6Message.data)
 }
- void Type6Message::set_data(const char* value, size_t size) {
+ void Type6Message::set_data(const void* value, size_t size) {
   set_has_data();
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -8536,7 +8428,8 @@ void Type7Message::clear_data() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Type8Message::kDataFieldNumber;
+const int Type8Message::kData1FieldNumber;
+const int Type8Message::kData2FieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Type8Message::Type8Message()
@@ -8557,9 +8450,9 @@ Type8Message::Type8Message(const Type8Message& from)
 }
 
 void Type8Message::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data1_ = 0;
+  data2_ = GOOGLE_LONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -8569,7 +8462,6 @@ Type8Message::~Type8Message() {
 }
 
 void Type8Message::SharedDtor() {
-  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -8601,9 +8493,27 @@ Type8Message* Type8Message::New(::google::protobuf::Arena* arena) const {
 
 void Type8Message::Clear() {
 // @@protoc_insertion_point(message_clear_start:tests.Type8Message)
-  if (has_data()) {
-    data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Type8Message, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Type8Message*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(data2_, data1_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   if (_internal_metadata_.have_unknown_fields()) {
     mutable_unknown_fields()->Clear();
@@ -8620,15 +8530,28 @@ bool Type8Message::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string data = 1;
+      // optional int32 data1 = 1;
       case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_data()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->data().data(), this->data().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "tests.Type8Message.data");
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &data1_)));
+          set_has_data1();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_data2;
+        break;
+      }
+
+      // optional int64 data2 = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_data2:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &data2_)));
+          set_has_data2();
         } else {
           goto handle_unusual;
         }
@@ -8661,14 +8584,14 @@ failure:
 void Type8Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:tests.Type8Message)
-  // optional string data = 1;
-  if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type8Message.data");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->data(), output);
+  // optional int32 data1 = 1;
+  if (has_data1()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->data1(), output);
+  }
+
+  // optional int64 data2 = 2;
+  if (has_data2()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->data2(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -8681,15 +8604,14 @@ void Type8Message::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Type8Message::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tests.Type8Message)
-  // optional string data = 1;
-  if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type8Message.data");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->data(), target);
+  // optional int32 data1 = 1;
+  if (has_data1()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->data1(), target);
+  }
+
+  // optional int64 data2 = 2;
+  if (has_data2()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->data2(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -8704,13 +8626,22 @@ int Type8Message::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:tests.Type8Message)
   int total_size = 0;
 
-  // optional string data = 1;
-  if (has_data()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->data());
-  }
+  if (_has_bits_[0 / 32] & 3u) {
+    // optional int32 data1 = 1;
+    if (has_data1()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->data1());
+    }
 
+    // optional int64 data2 = 2;
+    if (has_data2()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
+          this->data2());
+    }
+
+  }
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -8745,9 +8676,11 @@ void Type8Message::MergeFrom(const Type8Message& from) {
     ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
   }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_data()) {
-      set_has_data();
-      data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+    if (from.has_data1()) {
+      set_data1(from.data1());
+    }
+    if (from.has_data2()) {
+      set_data2(from.data2());
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
@@ -8779,7 +8712,8 @@ void Type8Message::Swap(Type8Message* other) {
   InternalSwap(other);
 }
 void Type8Message::InternalSwap(Type8Message* other) {
-  data_.Swap(&other->data_);
+  std::swap(data1_, other->data1_);
+  std::swap(data2_, other->data2_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -8796,58 +8730,52 @@ void Type8Message::InternalSwap(Type8Message* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Type8Message
 
-// optional string data = 1;
-bool Type8Message::has_data() const {
+// optional int32 data1 = 1;
+bool Type8Message::has_data1() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-void Type8Message::set_has_data() {
+void Type8Message::set_has_data1() {
   _has_bits_[0] |= 0x00000001u;
 }
-void Type8Message::clear_has_data() {
+void Type8Message::clear_has_data1() {
   _has_bits_[0] &= ~0x00000001u;
 }
-void Type8Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_data();
+void Type8Message::clear_data1() {
+  data1_ = 0;
+  clear_has_data1();
 }
- const ::std::string& Type8Message::data() const {
-  // @@protoc_insertion_point(field_get:tests.Type8Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+ ::google::protobuf::int32 Type8Message::data1() const {
+  // @@protoc_insertion_point(field_get:tests.Type8Message.data1)
+  return data1_;
 }
- void Type8Message::set_data(const ::std::string& value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:tests.Type8Message.data)
+ void Type8Message::set_data1(::google::protobuf::int32 value) {
+  set_has_data1();
+  data1_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type8Message.data1)
 }
- void Type8Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type8Message.data)
+
+// optional int64 data2 = 2;
+bool Type8Message::has_data2() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
- void Type8Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type8Message.data)
+void Type8Message::set_has_data2() {
+  _has_bits_[0] |= 0x00000002u;
 }
- ::std::string* Type8Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type8Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void Type8Message::clear_has_data2() {
+  _has_bits_[0] &= ~0x00000002u;
 }
- ::std::string* Type8Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type8Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void Type8Message::clear_data2() {
+  data2_ = GOOGLE_LONGLONG(0);
+  clear_has_data2();
 }
- void Type8Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type8Message.data)
+ ::google::protobuf::int64 Type8Message::data2() const {
+  // @@protoc_insertion_point(field_get:tests.Type8Message.data2)
+  return data2_;
+}
+ void Type8Message::set_data2(::google::protobuf::int64 value) {
+  set_has_data2();
+  data2_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type8Message.data2)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -8855,7 +8783,9 @@ void Type8Message::clear_data() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Type9Message::kDataFieldNumber;
+const int Type9Message::kData1FieldNumber;
+const int Type9Message::kData2FieldNumber;
+const int Type9Message::kData3FieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Type9Message::Type9Message()
@@ -8876,9 +8806,10 @@ Type9Message::Type9Message(const Type9Message& from)
 }
 
 void Type9Message::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data1_ = 0;
+  data2_ = 0;
+  data3_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -8888,7 +8819,6 @@ Type9Message::~Type9Message() {
 }
 
 void Type9Message::SharedDtor() {
-  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -8920,9 +8850,27 @@ Type9Message* Type9Message::New(::google::protobuf::Arena* arena) const {
 
 void Type9Message::Clear() {
 // @@protoc_insertion_point(message_clear_start:tests.Type9Message)
-  if (has_data()) {
-    data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Type9Message, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Type9Message*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(data1_, data3_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   if (_internal_metadata_.have_unknown_fields()) {
     mutable_unknown_fields()->Clear();
@@ -8939,15 +8887,43 @@ bool Type9Message::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string data = 1;
+      // optional int32 data1 = 1;
       case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_data()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->data().data(), this->data().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "tests.Type9Message.data");
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &data1_)));
+          set_has_data1();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_data2;
+        break;
+      }
+
+      // optional int32 data2 = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_data2:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &data2_)));
+          set_has_data2();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_data3;
+        break;
+      }
+
+      // optional int32 data3 = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_data3:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &data3_)));
+          set_has_data3();
         } else {
           goto handle_unusual;
         }
@@ -8980,14 +8956,19 @@ failure:
 void Type9Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:tests.Type9Message)
-  // optional string data = 1;
-  if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type9Message.data");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->data(), output);
+  // optional int32 data1 = 1;
+  if (has_data1()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->data1(), output);
+  }
+
+  // optional int32 data2 = 2;
+  if (has_data2()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->data2(), output);
+  }
+
+  // optional int32 data3 = 3;
+  if (has_data3()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->data3(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9000,15 +8981,19 @@ void Type9Message::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Type9Message::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tests.Type9Message)
-  // optional string data = 1;
-  if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type9Message.data");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->data(), target);
+  // optional int32 data1 = 1;
+  if (has_data1()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->data1(), target);
+  }
+
+  // optional int32 data2 = 2;
+  if (has_data2()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->data2(), target);
+  }
+
+  // optional int32 data3 = 3;
+  if (has_data3()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->data3(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9023,13 +9008,29 @@ int Type9Message::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:tests.Type9Message)
   int total_size = 0;
 
-  // optional string data = 1;
-  if (has_data()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->data());
-  }
+  if (_has_bits_[0 / 32] & 7u) {
+    // optional int32 data1 = 1;
+    if (has_data1()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->data1());
+    }
 
+    // optional int32 data2 = 2;
+    if (has_data2()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->data2());
+    }
+
+    // optional int32 data3 = 3;
+    if (has_data3()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->data3());
+    }
+
+  }
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -9064,9 +9065,14 @@ void Type9Message::MergeFrom(const Type9Message& from) {
     ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
   }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_data()) {
-      set_has_data();
-      data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+    if (from.has_data1()) {
+      set_data1(from.data1());
+    }
+    if (from.has_data2()) {
+      set_data2(from.data2());
+    }
+    if (from.has_data3()) {
+      set_data3(from.data3());
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
@@ -9098,7 +9104,9 @@ void Type9Message::Swap(Type9Message* other) {
   InternalSwap(other);
 }
 void Type9Message::InternalSwap(Type9Message* other) {
-  data_.Swap(&other->data_);
+  std::swap(data1_, other->data1_);
+  std::swap(data2_, other->data2_);
+  std::swap(data3_, other->data3_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -9115,58 +9123,76 @@ void Type9Message::InternalSwap(Type9Message* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Type9Message
 
-// optional string data = 1;
-bool Type9Message::has_data() const {
+// optional int32 data1 = 1;
+bool Type9Message::has_data1() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-void Type9Message::set_has_data() {
+void Type9Message::set_has_data1() {
   _has_bits_[0] |= 0x00000001u;
 }
-void Type9Message::clear_has_data() {
+void Type9Message::clear_has_data1() {
   _has_bits_[0] &= ~0x00000001u;
 }
-void Type9Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_data();
+void Type9Message::clear_data1() {
+  data1_ = 0;
+  clear_has_data1();
 }
- const ::std::string& Type9Message::data() const {
-  // @@protoc_insertion_point(field_get:tests.Type9Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+ ::google::protobuf::int32 Type9Message::data1() const {
+  // @@protoc_insertion_point(field_get:tests.Type9Message.data1)
+  return data1_;
 }
- void Type9Message::set_data(const ::std::string& value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:tests.Type9Message.data)
+ void Type9Message::set_data1(::google::protobuf::int32 value) {
+  set_has_data1();
+  data1_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type9Message.data1)
 }
- void Type9Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type9Message.data)
+
+// optional int32 data2 = 2;
+bool Type9Message::has_data2() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
- void Type9Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type9Message.data)
+void Type9Message::set_has_data2() {
+  _has_bits_[0] |= 0x00000002u;
 }
- ::std::string* Type9Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type9Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void Type9Message::clear_has_data2() {
+  _has_bits_[0] &= ~0x00000002u;
 }
- ::std::string* Type9Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type9Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void Type9Message::clear_data2() {
+  data2_ = 0;
+  clear_has_data2();
 }
- void Type9Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type9Message.data)
+ ::google::protobuf::int32 Type9Message::data2() const {
+  // @@protoc_insertion_point(field_get:tests.Type9Message.data2)
+  return data2_;
+}
+ void Type9Message::set_data2(::google::protobuf::int32 value) {
+  set_has_data2();
+  data2_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type9Message.data2)
+}
+
+// optional int32 data3 = 3;
+bool Type9Message::has_data3() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Type9Message::set_has_data3() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Type9Message::clear_has_data3() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Type9Message::clear_data3() {
+  data3_ = 0;
+  clear_has_data3();
+}
+ ::google::protobuf::int32 Type9Message::data3() const {
+  // @@protoc_insertion_point(field_get:tests.Type9Message.data3)
+  return data3_;
+}
+ void Type9Message::set_data3(::google::protobuf::int32 value) {
+  set_has_data3();
+  data3_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type9Message.data3)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

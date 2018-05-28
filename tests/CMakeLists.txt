@@ -6,6 +6,7 @@ set(SRC
     server_test
     server_events_test
     component_test
+    module_test
 )
 
 add_library(protobuf_messages protobuf_messages/messages.pb.cc)

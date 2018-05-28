@@ -550,17 +550,12 @@ class Type3Message : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // optional string data = 1;
+  // optional bool data = 1;
   bool has_data() const;
   void clear_data();
   static const int kDataFieldNumber = 1;
-  const ::std::string& data() const;
-  void set_data(const ::std::string& value);
-  void set_data(const char* value);
-  void set_data(const char* value, size_t size);
-  ::std::string* mutable_data();
-  ::std::string* release_data();
-  void set_allocated_data(::std::string* data);
+  bool data() const;
+  void set_data(bool value);
 
   // @@protoc_insertion_point(class_scope:tests.Type3Message)
  private:
@@ -570,7 +565,7 @@ class Type3Message : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr data_;
+  bool data_;
   friend void  protobuf_AddDesc_messages_2eproto();
   friend void protobuf_AssignDesc_messages_2eproto();
   friend void protobuf_ShutdownFile_messages_2eproto();
@@ -741,17 +736,12 @@ class Type5Message : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // optional string data = 1;
+  // optional double data = 1;
   bool has_data() const;
   void clear_data();
   static const int kDataFieldNumber = 1;
-  const ::std::string& data() const;
-  void set_data(const ::std::string& value);
-  void set_data(const char* value);
-  void set_data(const char* value, size_t size);
-  ::std::string* mutable_data();
-  ::std::string* release_data();
-  void set_allocated_data(::std::string* data);
+  double data() const;
+  void set_data(double value);
 
   // @@protoc_insertion_point(class_scope:tests.Type5Message)
  private:
@@ -761,7 +751,7 @@ class Type5Message : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr data_;
+  double data_;
   friend void  protobuf_AddDesc_messages_2eproto();
   friend void protobuf_AssignDesc_messages_2eproto();
   friend void protobuf_ShutdownFile_messages_2eproto();
@@ -839,14 +829,14 @@ class Type6Message : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // optional string data = 1;
+  // optional bytes data = 1;
   bool has_data() const;
   void clear_data();
   static const int kDataFieldNumber = 1;
   const ::std::string& data() const;
   void set_data(const ::std::string& value);
   void set_data(const char* value);
-  void set_data(const char* value, size_t size);
+  void set_data(const void* value, size_t size);
   ::std::string* mutable_data();
   ::std::string* release_data();
   void set_allocated_data(::std::string* data);
@@ -1035,27 +1025,32 @@ class Type8Message : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // optional string data = 1;
-  bool has_data() const;
-  void clear_data();
-  static const int kDataFieldNumber = 1;
-  const ::std::string& data() const;
-  void set_data(const ::std::string& value);
-  void set_data(const char* value);
-  void set_data(const char* value, size_t size);
-  ::std::string* mutable_data();
-  ::std::string* release_data();
-  void set_allocated_data(::std::string* data);
+  // optional int32 data1 = 1;
+  bool has_data1() const;
+  void clear_data1();
+  static const int kData1FieldNumber = 1;
+  ::google::protobuf::int32 data1() const;
+  void set_data1(::google::protobuf::int32 value);
+
+  // optional int64 data2 = 2;
+  bool has_data2() const;
+  void clear_data2();
+  static const int kData2FieldNumber = 2;
+  ::google::protobuf::int64 data2() const;
+  void set_data2(::google::protobuf::int64 value);
 
   // @@protoc_insertion_point(class_scope:tests.Type8Message)
  private:
-  inline void set_has_data();
-  inline void clear_has_data();
+  inline void set_has_data1();
+  inline void clear_has_data1();
+  inline void set_has_data2();
+  inline void clear_has_data2();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr data_;
+  ::google::protobuf::int64 data2_;
+  ::google::protobuf::int32 data1_;
   friend void  protobuf_AddDesc_messages_2eproto();
   friend void protobuf_AssignDesc_messages_2eproto();
   friend void protobuf_ShutdownFile_messages_2eproto();
@@ -1133,27 +1128,42 @@ class Type9Message : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // optional string data = 1;
-  bool has_data() const;
-  void clear_data();
-  static const int kDataFieldNumber = 1;
-  const ::std::string& data() const;
-  void set_data(const ::std::string& value);
-  void set_data(const char* value);
-  void set_data(const char* value, size_t size);
-  ::std::string* mutable_data();
-  ::std::string* release_data();
-  void set_allocated_data(::std::string* data);
+  // optional int32 data1 = 1;
+  bool has_data1() const;
+  void clear_data1();
+  static const int kData1FieldNumber = 1;
+  ::google::protobuf::int32 data1() const;
+  void set_data1(::google::protobuf::int32 value);
+
+  // optional int32 data2 = 2;
+  bool has_data2() const;
+  void clear_data2();
+  static const int kData2FieldNumber = 2;
+  ::google::protobuf::int32 data2() const;
+  void set_data2(::google::protobuf::int32 value);
+
+  // optional int32 data3 = 3;
+  bool has_data3() const;
+  void clear_data3();
+  static const int kData3FieldNumber = 3;
+  ::google::protobuf::int32 data3() const;
+  void set_data3(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:tests.Type9Message)
  private:
-  inline void set_has_data();
-  inline void clear_has_data();
+  inline void set_has_data1();
+  inline void clear_has_data1();
+  inline void set_has_data2();
+  inline void clear_has_data2();
+  inline void set_has_data3();
+  inline void clear_has_data3();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr data_;
+  ::google::protobuf::int32 data1_;
+  ::google::protobuf::int32 data2_;
+  ::google::protobuf::int32 data3_;
   friend void  protobuf_AddDesc_messages_2eproto();
   friend void protobuf_AssignDesc_messages_2eproto();
   friend void protobuf_ShutdownFile_messages_2eproto();
@@ -25539,7 +25549,7 @@ inline void Type2Message::set_data(::google::protobuf::int64 value) {
 
 // Type3Message
 
-// optional string data = 1;
+// optional bool data = 1;
 inline bool Type3Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -25550,47 +25560,17 @@ inline void Type3Message::clear_has_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void Type3Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = false;
   clear_has_data();
 }
-inline const ::std::string& Type3Message::data() const {
+inline bool Type3Message::data() const {
   // @@protoc_insertion_point(field_get:tests.Type3Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return data_;
 }
-inline void Type3Message::set_data(const ::std::string& value) {
+inline void Type3Message::set_data(bool value) {
   set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  data_ = value;
   // @@protoc_insertion_point(field_set:tests.Type3Message.data)
-}
-inline void Type3Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type3Message.data)
-}
-inline void Type3Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type3Message.data)
-}
-inline ::std::string* Type3Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type3Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Type3Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type3Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Type3Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type3Message.data)
 }
 
 // -------------------------------------------------------------------
@@ -25625,7 +25605,7 @@ inline void Type4Message::set_data(float value) {
 
 // Type5Message
 
-// optional string data = 1;
+// optional double data = 1;
 inline bool Type5Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -25636,54 +25616,24 @@ inline void Type5Message::clear_has_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void Type5Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = 0;
   clear_has_data();
 }
-inline const ::std::string& Type5Message::data() const {
+inline double Type5Message::data() const {
   // @@protoc_insertion_point(field_get:tests.Type5Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return data_;
 }
-inline void Type5Message::set_data(const ::std::string& value) {
+inline void Type5Message::set_data(double value) {
   set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  data_ = value;
   // @@protoc_insertion_point(field_set:tests.Type5Message.data)
-}
-inline void Type5Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type5Message.data)
-}
-inline void Type5Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type5Message.data)
-}
-inline ::std::string* Type5Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type5Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Type5Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type5Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Type5Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type5Message.data)
 }
 
 // -------------------------------------------------------------------
 
 // Type6Message
 
-// optional string data = 1;
+// optional bytes data = 1;
 inline bool Type6Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -25711,7 +25661,7 @@ inline void Type6Message::set_data(const char* value) {
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:tests.Type6Message.data)
 }
-inline void Type6Message::set_data(const char* value, size_t size) {
+inline void Type6Message::set_data(const void* value, size_t size) {
   set_has_data();
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -25799,116 +25749,128 @@ inline void Type7Message::set_allocated_data(::std::string* data) {
 
 // Type8Message
 
-// optional string data = 1;
-inline bool Type8Message::has_data() const {
+// optional int32 data1 = 1;
+inline bool Type8Message::has_data1() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Type8Message::set_has_data() {
+inline void Type8Message::set_has_data1() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Type8Message::clear_has_data() {
+inline void Type8Message::clear_has_data1() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Type8Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_data();
+inline void Type8Message::clear_data1() {
+  data1_ = 0;
+  clear_has_data1();
 }
-inline const ::std::string& Type8Message::data() const {
-  // @@protoc_insertion_point(field_get:tests.Type8Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::google::protobuf::int32 Type8Message::data1() const {
+  // @@protoc_insertion_point(field_get:tests.Type8Message.data1)
+  return data1_;
 }
-inline void Type8Message::set_data(const ::std::string& value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:tests.Type8Message.data)
+inline void Type8Message::set_data1(::google::protobuf::int32 value) {
+  set_has_data1();
+  data1_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type8Message.data1)
 }
-inline void Type8Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type8Message.data)
+
+// optional int64 data2 = 2;
+inline bool Type8Message::has_data2() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Type8Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type8Message.data)
+inline void Type8Message::set_has_data2() {
+  _has_bits_[0] |= 0x00000002u;
 }
-inline ::std::string* Type8Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type8Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Type8Message::clear_has_data2() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline ::std::string* Type8Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type8Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Type8Message::clear_data2() {
+  data2_ = GOOGLE_LONGLONG(0);
+  clear_has_data2();
 }
-inline void Type8Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type8Message.data)
+inline ::google::protobuf::int64 Type8Message::data2() const {
+  // @@protoc_insertion_point(field_get:tests.Type8Message.data2)
+  return data2_;
+}
+inline void Type8Message::set_data2(::google::protobuf::int64 value) {
+  set_has_data2();
+  data2_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type8Message.data2)
 }
 
 // -------------------------------------------------------------------
 
 // Type9Message
 
-// optional string data = 1;
-inline bool Type9Message::has_data() const {
+// optional int32 data1 = 1;
+inline bool Type9Message::has_data1() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Type9Message::set_has_data() {
+inline void Type9Message::set_has_data1() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Type9Message::clear_has_data() {
+inline void Type9Message::clear_has_data1() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Type9Message::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_data();
+inline void Type9Message::clear_data1() {
+  data1_ = 0;
+  clear_has_data1();
 }
-inline const ::std::string& Type9Message::data() const {
-  // @@protoc_insertion_point(field_get:tests.Type9Message.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::google::protobuf::int32 Type9Message::data1() const {
+  // @@protoc_insertion_point(field_get:tests.Type9Message.data1)
+  return data1_;
 }
-inline void Type9Message::set_data(const ::std::string& value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:tests.Type9Message.data)
+inline void Type9Message::set_data1(::google::protobuf::int32 value) {
+  set_has_data1();
+  data1_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type9Message.data1)
 }
-inline void Type9Message::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tests.Type9Message.data)
+
+// optional int32 data2 = 2;
+inline bool Type9Message::has_data2() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Type9Message::set_data(const char* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tests.Type9Message.data)
+inline void Type9Message::set_has_data2() {
+  _has_bits_[0] |= 0x00000002u;
 }
-inline ::std::string* Type9Message::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:tests.Type9Message.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Type9Message::clear_has_data2() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline ::std::string* Type9Message::release_data() {
-  // @@protoc_insertion_point(field_release:tests.Type9Message.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Type9Message::clear_data2() {
+  data2_ = 0;
+  clear_has_data2();
 }
-inline void Type9Message::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:tests.Type9Message.data)
+inline ::google::protobuf::int32 Type9Message::data2() const {
+  // @@protoc_insertion_point(field_get:tests.Type9Message.data2)
+  return data2_;
+}
+inline void Type9Message::set_data2(::google::protobuf::int32 value) {
+  set_has_data2();
+  data2_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type9Message.data2)
+}
+
+// optional int32 data3 = 3;
+inline bool Type9Message::has_data3() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Type9Message::set_has_data3() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Type9Message::clear_has_data3() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Type9Message::clear_data3() {
+  data3_ = 0;
+  clear_has_data3();
+}
+inline ::google::protobuf::int32 Type9Message::data3() const {
+  // @@protoc_insertion_point(field_get:tests.Type9Message.data3)
+  return data3_;
+}
+inline void Type9Message::set_data3(::google::protobuf::int32 value) {
+  set_has_data3();
+  data3_ = value;
+  // @@protoc_insertion_point(field_set:tests.Type9Message.data3)
 }
 
 // -------------------------------------------------------------------

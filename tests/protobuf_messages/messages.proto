@@ -11,7 +11,7 @@ message Type2Message {
 }
 
 message Type3Message {
-    optional string data = 1;
+    optional bool data = 1;
 }
 
 message Type4Message {
@@ -19,11 +19,11 @@ message Type4Message {
 }
 
 message Type5Message {
-    optional string data = 1;
+    optional double data = 1;
 }
 
 message Type6Message {
-    optional string data = 1;
+    optional bytes data = 1;
 }
 
 message Type7Message {
@@ -31,11 +31,14 @@ message Type7Message {
 }
 
 message Type8Message {
-    optional string data = 1;
+    optional int32 data1 = 1;
+    optional int64 data2 = 2;
 }
 
 message Type9Message {
-    optional string data = 1;
+    optional int32 data1 = 1;
+    optional int32 data2 = 2;
+    optional int32 data3 = 3;
 }
 
 message SimpleClientMessage {
