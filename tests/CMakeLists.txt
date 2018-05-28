@@ -4,6 +4,7 @@ set(SRC
     async_client_test
     async_handler_test
     server_test
+    server_events_test
 )
 
 add_library(protobuf_messages protobuf_messages/messages.pb.cc)
