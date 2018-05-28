@@ -10,6 +10,7 @@ set(SRC
     module_timer_test
     module_chart
     module_bench
+    async_stdin_test
 )
 
 add_library(protobuf_messages protobuf_messages/messages.pb.cc)
