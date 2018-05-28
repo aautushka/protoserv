@@ -8,6 +8,7 @@ set(SRC
     component_test
     module_test
     module_timer_test
+    module_chart
 )
 
 add_library(protobuf_messages protobuf_messages/messages.pb.cc)
