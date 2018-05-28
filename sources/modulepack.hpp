@@ -1,7 +1,8 @@
-﻿#pragma once
+#pragma once
 #include "server.hpp"
 #include "meta_protocol.hpp"
 #include "dispatch_table.hpp"
+#include "components.hpp"
 #include <string>
 
 using application_server = protoserv::app_server;
@@ -85,7 +86,7 @@ public:
         }
 
         // @brief Passes the received server message to the handler
-        void handle_message(ServerConnection& conn, const Message& msg)
+        void handle_message(ServerConnection& conn, const protoserv::Message& msg)
         {
             assert(&conn == conn_);
 
@@ -157,7 +158,7 @@ public:
         }
 
     private:
-        dispatch_table<Messages...> dispatcher_;
+        protoserv::dispatch_table<Messages...> dispatcher_;
         bool connected_ = false;
     };
 
@@ -316,7 +317,7 @@ public:
             dispatch_deinitialized();
         };
 
-        onConfigurationLoaded = [this](auto & conf)
+        onConfigurationLoaded = [this](const auto & conf)
         {
             dispatch_configuration(conf);
         };
@@ -324,20 +325,20 @@ public:
 
 private:
     // @brief Dispatches client message to the derived class and its components
-    void dispatch_client(ClientConnection& conn, const Message& msg)
+    void dispatch_client(ClientConnection& conn, const protoserv::Message& msg)
     {
         dispatch_message(conn, msg.type, msg.data, msg.size);
 
-        dispatch_component_message<protocol_pack, Messages...>(
+        ComponentPack::template dispatch_component_message<protocol_pack, Messages...>(
             conn, msg.type, msg.data, msg.size);
     }
 
     // @brief Dispatches server message to the derived class, server handler and components
-    void dispatch_server(ServerConnection& conn, const Message& msg)
+    void dispatch_server(ServerConnection& conn, const protoserv::Message& msg)
     {
         dispatch_message(conn, msg.type, msg.data, msg.size);
 
-        dispatch_component_message<protocol_pack, Messages...>(
+        ComponentPack::template dispatch_component_message<protocol_pack, Messages...>(
             conn, msg.type, msg.data, msg.size);
     }
 
@@ -356,7 +357,7 @@ private:
     {
         auto& mod = static_cast<Module&>(*this);
         meta::call_on_connected(mod, session, 0);
-        open_component_connection(session);
+        ComponentPack::open_component_connection(session);
     }
 
     // @brief Dispaches diconnected event to the derived class and components
@@ -365,11 +366,11 @@ private:
     {
         auto& mod = static_cast<Module&>(*this);
         meta::call_on_disconnected(mod, session, 0);
-        close_component_connection(session);
+        ComponentPack::close_component_connection(session);
     }
 
     // @brief Dispatches stdin command to the derived class
-    void dispatch_command(const command& cmd)
+    void dispatch_command(const protoserv::command& cmd)
     {
         auto& mod = static_cast<Module&>(*this);
         meta::call_on_command(mod, cmd, 0);
@@ -380,7 +381,7 @@ private:
     {
         auto& mod = static_cast<Module&>(*this);
         meta::call_on_initialized(mod, 0);
-        initialize_component();
+        ComponentPack::initialize_component();
     }
 
     // @brief Dispatches application deinitialization event to the derived class and components
@@ -388,14 +389,14 @@ private:
     {
         auto& mod = static_cast<Module&>(*this);
         meta::call_on_deinitialized(mod, 0);
-        deinitialize_component();
+        ComponentPack::deinitialize_component();
     }
 
     // @brief Dispaches configuration change event to the derived class and components
-    void dispatch_configuration(Application::Option& conf)
+    void dispatch_configuration(const protoserv::Options& conf)
     {
         auto& mod = static_cast<Module&>(*this);
         meta::call_on_configuration(mod, conf, 0);
-        configure_component(conf);
+        ComponentPack::configure_component(conf);
     }
 };

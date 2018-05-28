@@ -1,19 +1,20 @@
-﻿#pragma once
+#pragma once
 
-#include "session_buffers.hpp"
-#include "message.hpp"
-
-#include <google/protobuf/message.h>
-
+#include <boost/test/unit_test.hpp>
 #include <boost/container/small_vector.hpp>
 #include <boost/asio.hpp>
 #include <boost/format.hpp>
-#include <iostream>
 
+#include <google/protobuf/message.h>
+
+#include <iostream>
 #include <chrono>
 #include <limits>
 #include <string>
 #include <any>
+
+#include "session_buffers.hpp"
+#include "message.hpp"
 
 namespace protoserv
 {
@@ -78,6 +79,8 @@ template <
 class basic_session: public Formatter
 {
 public:
+    friend class protobuf_packet<Derived>;
+
     using clock_type = std::chrono::steady_clock;
     using tcp = boost::asio::ip::tcp;
     using Formatter::send;

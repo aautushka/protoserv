@@ -1,10 +1,10 @@
 #pragma once
 
-#include "client_session.h"
-#include "message.h"
-#include "messagebuf.h"
-#include "meta_protocol.h"
-#include "dispatch_table.h"
+#include "client_session.hpp"
+#include "message.hpp"
+#include "messagebuf.hpp"
+#include "meta_protocol.hpp"
+#include "dispatch_table.hpp"
 #include <string>
 #include <algorithm>
 #include <list>
@@ -83,11 +83,18 @@ public:
         }
     }
 
+    template <typename T>
+    auto get_message_id()
+    {
+        using message_id_type = typename proto_ops::template get_message_id<T>;
+        return message_id_type::value;
+    }
+
     // @brief Sends protobuf message to the remote e
     template <typename T>
     void send(const T& message)
     {
-        session_->send(proto_ops::get_message_id<T>::value, message);
+        session_->send(get_message_id<T>(), message);
     }
 
     template <typename T>
@@ -106,7 +113,7 @@ public:
             for (auto i = queue_.begin(); i != queue_.end(); ++i)
             {
                 auto& m = **i;
-                if (proto_ops::get_message_id<T>::value == m.type)
+                if (get_message_id<T>() == m.type)
                 {
                     t.ParseFromArray(m.data, m.size);
                     queue_.erase(i);
@@ -125,7 +132,7 @@ public:
         for (auto i = queue_.begin(); i != queue_.end(); ++i)
         {
             auto& m = **i;
-            if (proto_ops::get_message_id<T>::value == m.type)
+            if (get_message_id<T>() == m.type)
             {
                 t.ParseFromArray(m.data, m.size);
                 queue_.erase(i);

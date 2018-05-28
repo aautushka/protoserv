@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "server_session.hpp"
 #include "client_session.hpp"

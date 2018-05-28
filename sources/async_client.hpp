@@ -1,5 +1,5 @@
 #pragma once
-#include "async_pack.h"
+#include "async_pack.hpp"
 
 namespace protoserv
 {

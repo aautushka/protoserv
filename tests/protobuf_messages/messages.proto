@@ -1,0 +1,44 @@
+syntax = "proto2";
+
+package tests;
+
+message Type1Message {
+    optional int32 data = 1;
+}
+
+message Type2Message {
+    optional int64 data = 1;
+}
+
+message Type3Message {
+    optional string data = 1;
+}
+
+message Type4Message {
+    optional float data = 1;
+}
+
+message Type5Message {
+    optional string data = 1;
+}
+
+message Type6Message {
+    optional string data = 1;
+}
+
+message Type7Message {
+    optional string data = 1;
+}
+
+message Type8Message {
+    optional string data = 1;
+}
+
+message Type9Message {
+    optional string data = 1;
+}
+
+message SimpleClientMessage {
+    required int32 timestamp = 1;
+    optional string payload = 2;
+}

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "server.hpp"
 #include "boost/format.hpp"
 #include "dispatch_table.hpp"
@@ -296,8 +296,8 @@ struct dispatcher;
 template<class Module, class Protocol>
 struct dispatcher<Module, Protocol>
 {
-    template <typename Module, typename Connection>
-    static void dispatch(Module& mod, Connection& conn, int id, const void* buf, int len)
+    template <typename Mod, typename Connection>
+    static void dispatch(Mod& mod, Connection& conn, int id, const void* buf, int len)
     {
         //TODO: add logging here later
         //std::cout << "Unregistered id = " << id << " on module level" << std::endl;
@@ -420,12 +420,12 @@ void deinitialize_component(Aggregate& agg)
 
 // @brief Configures components
 template <typename Aggregate, typename Configuration>
-void configure_component(Aggregate&, Configuration&) {}
+void configure_component(Aggregate&, const Configuration&) {}
 
 template <typename Aggregate, typename Configuration, class Component, class ... Cs>
-void configure_component(Aggregate& agg, Configuration& conf)
+void configure_component(Aggregate& agg, const Configuration& conf)
 {
-    auto& comp = static_cast<Component&>(agg);
+    const auto& comp = static_cast<const Component&>(agg);
     call_on_configuration(comp, conf, 0);
     configure_component<Aggregate, Configuration, Cs...>(agg, conf);
 }
@@ -512,7 +512,7 @@ struct component_aggregate : public Component<Module>...
 
     // @brief Configures all components
     template <typename Configuration>
-    void configure_component(Configuration& conf)
+    void configure_component(const Configuration& conf)
     {
         meta::configure_component<self_type, Configuration, Component<Module>...>(*this, conf);
     }
@@ -544,7 +544,7 @@ public:
     template <typename Protocol, typename ... Messages, typename Connection>
     void dispatch_component_message(Connection& conn, int id, const void* buf, int len)
     {
-        aggregate_.dispatch_component_message<Protocol, Messages...>(conn, id, buf, len);
+        aggregate_.template dispatch_component_message<Protocol, Messages...>(conn, id, buf, len);
     }
 
     template <typename Connection>
@@ -570,15 +570,15 @@ public:
     }
 
     template <typename Configuration>
-    void configure_component(Configuration& conf)
+    void configure_component(const Configuration& conf)
     {
         aggregate_.configure_component(conf);
     }
 
-    template <template <class> class Component>
-    Component<Module>& query_component()
+    template <template <class> class Comp>
+    Comp<Module>& query_component()
     {
-        return static_cast<Component<Module>&>(aggregate_);
+        return static_cast<Comp<Module>&>(aggregate_);
     }
 
     template <template <class> class Callee, template <class> class Caller>

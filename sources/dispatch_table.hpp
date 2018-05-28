@@ -72,14 +72,14 @@ public:
     void subscribe(const std::function<void(P&, boost::system::error_code)>& h)
     {
         queue_.emplace_back(h);
-        add_pending_handler();
+        dispatch_table<>::add_pending_handler();
     }
 
     // @brief Subscribes to protobuf message
     void subscribe(std::function<void(P&, boost::system::error_code)>&& h)
     {
         queue_.emplace_back(h);
-        add_pending_handler();
+        dispatch_table<>::add_pending_handler();
     }
 
     // @brief Clears subscriptions, calls all handlers with error code
@@ -136,7 +136,7 @@ private:
     {
         auto h = std::move(queue_.front());
         queue_.pop_front();
-        remove_pending_handler();
+        dispatch_table<>::remove_pending_handler();
         return h;
     }
 

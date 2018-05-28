@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "basic_session.hpp"
 
 namespace protoserv
