@@ -5,6 +5,7 @@ set(SRC
     async_handler_test
     server_test
     server_events_test
+    component_test
 )
 
 add_library(protobuf_messages protobuf_messages/messages.pb.cc)
