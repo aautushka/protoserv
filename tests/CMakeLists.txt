@@ -2,6 +2,7 @@ set(SRC
     main.cpp
     basic_session_test
     async_client_test
+    async_handler_test
 )
 
 add_library(protobuf_messages protobuf_messages/messages.pb.cc)

@@ -4,6 +4,8 @@
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
 
+#include "server.hpp"
+
 namespace tests
 {
 namespace fs = boost::filesystem;

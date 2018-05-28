@@ -42,3 +42,991 @@ message SimpleClientMessage {
     required int32 timestamp = 1;
     optional string payload = 2;
 }
+message Type10Message {
+   optional string data = 1;
+}
+
+message Type11Message {
+   optional string data = 1;
+}
+
+message Type12Message {
+   optional string data = 1;
+}
+
+message Type13Message {
+   optional string data = 1;
+}
+
+message Type14Message {
+   optional string data = 1;
+}
+
+message Type15Message {
+   optional string data = 1;
+}
+
+message Type16Message {
+   optional string data = 1;
+}
+
+message Type17Message {
+   optional string data = 1;
+}
+
+message Type18Message {
+   optional string data = 1;
+}
+
+message Type19Message {
+   optional string data = 1;
+}
+
+message Type20Message {
+   optional string data = 1;
+}
+
+message Type21Message {
+   optional string data = 1;
+}
+
+message Type22Message {
+   optional string data = 1;
+}
+
+message Type23Message {
+   optional string data = 1;
+}
+
+message Type24Message {
+   optional string data = 1;
+}
+
+message Type25Message {
+   optional string data = 1;
+}
+
+message Type26Message {
+   optional string data = 1;
+}
+
+message Type27Message {
+   optional string data = 1;
+}
+
+message Type28Message {
+   optional string data = 1;
+}
+
+message Type29Message {
+   optional string data = 1;
+}
+
+message Type30Message {
+   optional string data = 1;
+}
+
+message Type31Message {
+   optional string data = 1;
+}
+
+message Type32Message {
+   optional string data = 1;
+}
+
+message Type33Message {
+   optional string data = 1;
+}
+
+message Type34Message {
+   optional string data = 1;
+}
+
+message Type35Message {
+   optional string data = 1;
+}
+
+message Type36Message {
+   optional string data = 1;
+}
+
+message Type37Message {
+   optional string data = 1;
+}
+
+message Type38Message {
+   optional string data = 1;
+}
+
+message Type39Message {
+   optional string data = 1;
+}
+
+message Type40Message {
+   optional string data = 1;
+}
+
+message Type41Message {
+   optional string data = 1;
+}
+
+message Type42Message {
+   optional string data = 1;
+}
+
+message Type43Message {
+   optional string data = 1;
+}
+
+message Type44Message {
+   optional string data = 1;
+}
+
+message Type45Message {
+   optional string data = 1;
+}
+
+message Type46Message {
+   optional string data = 1;
+}
+
+message Type47Message {
+   optional string data = 1;
+}
+
+message Type48Message {
+   optional string data = 1;
+}
+
+message Type49Message {
+   optional string data = 1;
+}
+
+message Type50Message {
+   optional string data = 1;
+}
+
+message Type51Message {
+   optional string data = 1;
+}
+
+message Type52Message {
+   optional string data = 1;
+}
+
+message Type53Message {
+   optional string data = 1;
+}
+
+message Type54Message {
+   optional string data = 1;
+}
+
+message Type55Message {
+   optional string data = 1;
+}
+
+message Type56Message {
+   optional string data = 1;
+}
+
+message Type57Message {
+   optional string data = 1;
+}
+
+message Type58Message {
+   optional string data = 1;
+}
+
+message Type59Message {
+   optional string data = 1;
+}
+
+message Type60Message {
+   optional string data = 1;
+}
+
+message Type61Message {
+   optional string data = 1;
+}
+
+message Type62Message {
+   optional string data = 1;
+}
+
+message Type63Message {
+   optional string data = 1;
+}
+
+message Type64Message {
+   optional string data = 1;
+}
+
+message Type65Message {
+   optional string data = 1;
+}
+
+message Type66Message {
+   optional string data = 1;
+}
+
+message Type67Message {
+   optional string data = 1;
+}
+
+message Type68Message {
+   optional string data = 1;
+}
+
+message Type69Message {
+   optional string data = 1;
+}
+
+message Type70Message {
+   optional string data = 1;
+}
+
+message Type71Message {
+   optional string data = 1;
+}
+
+message Type72Message {
+   optional string data = 1;
+}
+
+message Type73Message {
+   optional string data = 1;
+}
+
+message Type74Message {
+   optional string data = 1;
+}
+
+message Type75Message {
+   optional string data = 1;
+}
+
+message Type76Message {
+   optional string data = 1;
+}
+
+message Type77Message {
+   optional string data = 1;
+}
+
+message Type78Message {
+   optional string data = 1;
+}
+
+message Type79Message {
+   optional string data = 1;
+}
+
+message Type80Message {
+   optional string data = 1;
+}
+
+message Type81Message {
+   optional string data = 1;
+}
+
+message Type82Message {
+   optional string data = 1;
+}
+
+message Type83Message {
+   optional string data = 1;
+}
+
+message Type84Message {
+   optional string data = 1;
+}
+
+message Type85Message {
+   optional string data = 1;
+}
+
+message Type86Message {
+   optional string data = 1;
+}
+
+message Type87Message {
+   optional string data = 1;
+}
+
+message Type88Message {
+   optional string data = 1;
+}
+
+message Type89Message {
+   optional string data = 1;
+}
+
+message Type90Message {
+   optional string data = 1;
+}
+
+message Type91Message {
+   optional string data = 1;
+}
+
+message Type92Message {
+   optional string data = 1;
+}
+
+message Type93Message {
+   optional string data = 1;
+}
+
+message Type94Message {
+   optional string data = 1;
+}
+
+message Type95Message {
+   optional string data = 1;
+}
+
+message Type96Message {
+   optional string data = 1;
+}
+
+message Type97Message {
+   optional string data = 1;
+}
+
+message Type98Message {
+   optional string data = 1;
+}
+
+message Type99Message {
+   optional string data = 1;
+}
+
+message Type100Message {
+   optional string data = 1;
+}
+
+message Type101Message {
+   optional string data = 1;
+}
+
+message Type102Message {
+   optional string data = 1;
+}
+
+message Type103Message {
+   optional string data = 1;
+}
+
+message Type104Message {
+   optional string data = 1;
+}
+
+message Type105Message {
+   optional string data = 1;
+}
+
+message Type106Message {
+   optional string data = 1;
+}
+
+message Type107Message {
+   optional string data = 1;
+}
+
+message Type108Message {
+   optional string data = 1;
+}
+
+message Type109Message {
+   optional string data = 1;
+}
+
+message Type110Message {
+   optional string data = 1;
+}
+
+message Type111Message {
+   optional string data = 1;
+}
+
+message Type112Message {
+   optional string data = 1;
+}
+
+message Type113Message {
+   optional string data = 1;
+}
+
+message Type114Message {
+   optional string data = 1;
+}
+
+message Type115Message {
+   optional string data = 1;
+}
+
+message Type116Message {
+   optional string data = 1;
+}
+
+message Type117Message {
+   optional string data = 1;
+}
+
+message Type118Message {
+   optional string data = 1;
+}
+
+message Type119Message {
+   optional string data = 1;
+}
+
+message Type120Message {
+   optional string data = 1;
+}
+
+message Type121Message {
+   optional string data = 1;
+}
+
+message Type122Message {
+   optional string data = 1;
+}
+
+message Type123Message {
+   optional string data = 1;
+}
+
+message Type124Message {
+   optional string data = 1;
+}
+
+message Type125Message {
+   optional string data = 1;
+}
+
+message Type126Message {
+   optional string data = 1;
+}
+
+message Type127Message {
+   optional string data = 1;
+}
+
+message Type128Message {
+   optional string data = 1;
+}
+
+message Type129Message {
+   optional string data = 1;
+}
+
+message Type130Message {
+   optional string data = 1;
+}
+
+message Type131Message {
+   optional string data = 1;
+}
+
+message Type132Message {
+   optional string data = 1;
+}
+
+message Type133Message {
+   optional string data = 1;
+}
+
+message Type134Message {
+   optional string data = 1;
+}
+
+message Type135Message {
+   optional string data = 1;
+}
+
+message Type136Message {
+   optional string data = 1;
+}
+
+message Type137Message {
+   optional string data = 1;
+}
+
+message Type138Message {
+   optional string data = 1;
+}
+
+message Type139Message {
+   optional string data = 1;
+}
+
+message Type140Message {
+   optional string data = 1;
+}
+
+message Type141Message {
+   optional string data = 1;
+}
+
+message Type142Message {
+   optional string data = 1;
+}
+
+message Type143Message {
+   optional string data = 1;
+}
+
+message Type144Message {
+   optional string data = 1;
+}
+
+message Type145Message {
+   optional string data = 1;
+}
+
+message Type146Message {
+   optional string data = 1;
+}
+
+message Type147Message {
+   optional string data = 1;
+}
+
+message Type148Message {
+   optional string data = 1;
+}
+
+message Type149Message {
+   optional string data = 1;
+}
+
+message Type150Message {
+   optional string data = 1;
+}
+
+message Type151Message {
+   optional string data = 1;
+}
+
+message Type152Message {
+   optional string data = 1;
+}
+
+message Type153Message {
+   optional string data = 1;
+}
+
+message Type154Message {
+   optional string data = 1;
+}
+
+message Type155Message {
+   optional string data = 1;
+}
+
+message Type156Message {
+   optional string data = 1;
+}
+
+message Type157Message {
+   optional string data = 1;
+}
+
+message Type158Message {
+   optional string data = 1;
+}
+
+message Type159Message {
+   optional string data = 1;
+}
+
+message Type160Message {
+   optional string data = 1;
+}
+
+message Type161Message {
+   optional string data = 1;
+}
+
+message Type162Message {
+   optional string data = 1;
+}
+
+message Type163Message {
+   optional string data = 1;
+}
+
+message Type164Message {
+   optional string data = 1;
+}
+
+message Type165Message {
+   optional string data = 1;
+}
+
+message Type166Message {
+   optional string data = 1;
+}
+
+message Type167Message {
+   optional string data = 1;
+}
+
+message Type168Message {
+   optional string data = 1;
+}
+
+message Type169Message {
+   optional string data = 1;
+}
+
+message Type170Message {
+   optional string data = 1;
+}
+
+message Type171Message {
+   optional string data = 1;
+}
+
+message Type172Message {
+   optional string data = 1;
+}
+
+message Type173Message {
+   optional string data = 1;
+}
+
+message Type174Message {
+   optional string data = 1;
+}
+
+message Type175Message {
+   optional string data = 1;
+}
+
+message Type176Message {
+   optional string data = 1;
+}
+
+message Type177Message {
+   optional string data = 1;
+}
+
+message Type178Message {
+   optional string data = 1;
+}
+
+message Type179Message {
+   optional string data = 1;
+}
+
+message Type180Message {
+   optional string data = 1;
+}
+
+message Type181Message {
+   optional string data = 1;
+}
+
+message Type182Message {
+   optional string data = 1;
+}
+
+message Type183Message {
+   optional string data = 1;
+}
+
+message Type184Message {
+   optional string data = 1;
+}
+
+message Type185Message {
+   optional string data = 1;
+}
+
+message Type186Message {
+   optional string data = 1;
+}
+
+message Type187Message {
+   optional string data = 1;
+}
+
+message Type188Message {
+   optional string data = 1;
+}
+
+message Type189Message {
+   optional string data = 1;
+}
+
+message Type190Message {
+   optional string data = 1;
+}
+
+message Type191Message {
+   optional string data = 1;
+}
+
+message Type192Message {
+   optional string data = 1;
+}
+
+message Type193Message {
+   optional string data = 1;
+}
+
+message Type194Message {
+   optional string data = 1;
+}
+
+message Type195Message {
+   optional string data = 1;
+}
+
+message Type196Message {
+   optional string data = 1;
+}
+
+message Type197Message {
+   optional string data = 1;
+}
+
+message Type198Message {
+   optional string data = 1;
+}
+
+message Type199Message {
+   optional string data = 1;
+}
+
+message Type200Message {
+   optional string data = 1;
+}
+
+message Type201Message {
+   optional string data = 1;
+}
+
+message Type202Message {
+   optional string data = 1;
+}
+
+message Type203Message {
+   optional string data = 1;
+}
+
+message Type204Message {
+   optional string data = 1;
+}
+
+message Type205Message {
+   optional string data = 1;
+}
+
+message Type206Message {
+   optional string data = 1;
+}
+
+message Type207Message {
+   optional string data = 1;
+}
+
+message Type208Message {
+   optional string data = 1;
+}
+
+message Type209Message {
+   optional string data = 1;
+}
+
+message Type210Message {
+   optional string data = 1;
+}
+
+message Type211Message {
+   optional string data = 1;
+}
+
+message Type212Message {
+   optional string data = 1;
+}
+
+message Type213Message {
+   optional string data = 1;
+}
+
+message Type214Message {
+   optional string data = 1;
+}
+
+message Type215Message {
+   optional string data = 1;
+}
+
+message Type216Message {
+   optional string data = 1;
+}
+
+message Type217Message {
+   optional string data = 1;
+}
+
+message Type218Message {
+   optional string data = 1;
+}
+
+message Type219Message {
+   optional string data = 1;
+}
+
+message Type220Message {
+   optional string data = 1;
+}
+
+message Type221Message {
+   optional string data = 1;
+}
+
+message Type222Message {
+   optional string data = 1;
+}
+
+message Type223Message {
+   optional string data = 1;
+}
+
+message Type224Message {
+   optional string data = 1;
+}
+
+message Type225Message {
+   optional string data = 1;
+}
+
+message Type226Message {
+   optional string data = 1;
+}
+
+message Type227Message {
+   optional string data = 1;
+}
+
+message Type228Message {
+   optional string data = 1;
+}
+
+message Type229Message {
+   optional string data = 1;
+}
+
+message Type230Message {
+   optional string data = 1;
+}
+
+message Type231Message {
+   optional string data = 1;
+}
+
+message Type232Message {
+   optional string data = 1;
+}
+
+message Type233Message {
+   optional string data = 1;
+}
+
+message Type234Message {
+   optional string data = 1;
+}
+
+message Type235Message {
+   optional string data = 1;
+}
+
+message Type236Message {
+   optional string data = 1;
+}
+
+message Type237Message {
+   optional string data = 1;
+}
+
+message Type238Message {
+   optional string data = 1;
+}
+
+message Type239Message {
+   optional string data = 1;
+}
+
+message Type240Message {
+   optional string data = 1;
+}
+
+message Type241Message {
+   optional string data = 1;
+}
+
+message Type242Message {
+   optional string data = 1;
+}
+
+message Type243Message {
+   optional string data = 1;
+}
+
+message Type244Message {
+   optional string data = 1;
+}
+
+message Type245Message {
+   optional string data = 1;
+}
+
+message Type246Message {
+   optional string data = 1;
+}
+
+message Type247Message {
+   optional string data = 1;
+}
+
+message Type248Message {
+   optional string data = 1;
+}
+
+message Type249Message {
+   optional string data = 1;
+}
+
+message Type250Message {
+   optional string data = 1;
+}
+
+message Type251Message {
+   optional string data = 1;
+}
+
+message Type252Message {
+   optional string data = 1;
+}
+
+message Type253Message {
+   optional string data = 1;
+}
+
+message Type254Message {
+   optional string data = 1;
+}
+
+message Type255Message {
+   optional string data = 1;
+}
+
+message Type256Message {
+   optional string data = 1;
+}
+

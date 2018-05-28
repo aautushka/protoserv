@@ -120,7 +120,7 @@ public:
     public:
         ClientOwner()
         {
-            set_handler(*this);
+            Client<Handler>::set_handler(*this);
         }
 
         ~ClientOwner() {}
