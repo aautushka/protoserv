@@ -5727,7 +5727,7 @@ void protobuf_AddDesc_messages_2eproto() {
     "e8Message\022\r\n\005data1\030\001 \001(\005\022\r\n\005data2\030\002 \001(\003\""
     ";\n\014Type9Message\022\r\n\005data1\030\001 \001(\005\022\r\n\005data2\030"
     "\002 \001(\005\022\r\n\005data3\030\003 \001(\005\"9\n\023SimpleClientMess"
-    "age\022\021\n\ttimestamp\030\001 \002(\005\022\017\n\007payload\030\002 \001(\t\""
+    "age\022\021\n\ttimestamp\030\001 \001(\005\022\017\n\007payload\030\002 \001(\t\""
     "\035\n\rType10Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType11"
     "Message\022\014\n\004data\030\001 \001(\t\"\035\n\rType12Message\022\014"
     "\n\004data\030\001 \001(\t\"\035\n\rType13Message\022\014\n\004data\030\001 "
@@ -9289,7 +9289,7 @@ bool SimpleClientMessage::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 timestamp = 1;
+      // optional int32 timestamp = 1;
       case 1: {
         if (tag == 8) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
@@ -9345,7 +9345,7 @@ failure:
 void SimpleClientMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:tests.SimpleClientMessage)
-  // required int32 timestamp = 1;
+  // optional int32 timestamp = 1;
   if (has_timestamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->timestamp(), output);
   }
@@ -9370,7 +9370,7 @@ void SimpleClientMessage::SerializeWithCachedSizes(
 ::google::protobuf::uint8* SimpleClientMessage::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tests.SimpleClientMessage)
-  // required int32 timestamp = 1;
+  // optional int32 timestamp = 1;
   if (has_timestamp()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->timestamp(), target);
   }
@@ -9398,19 +9398,22 @@ int SimpleClientMessage::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:tests.SimpleClientMessage)
   int total_size = 0;
 
-  // required int32 timestamp = 1;
-  if (has_timestamp()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->timestamp());
-  }
-  // optional string payload = 2;
-  if (has_payload()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->payload());
-  }
+  if (_has_bits_[0 / 32] & 3u) {
+    // optional int32 timestamp = 1;
+    if (has_timestamp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->timestamp());
+    }
 
+    // optional string payload = 2;
+    if (has_payload()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->payload());
+    }
+
+  }
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -9473,7 +9476,6 @@ void SimpleClientMessage::CopyFrom(const SimpleClientMessage& from) {
 }
 
 bool SimpleClientMessage::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
   return true;
 }
@@ -9501,7 +9503,7 @@ void SimpleClientMessage::InternalSwap(SimpleClientMessage* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SimpleClientMessage
 
-// required int32 timestamp = 1;
+// optional int32 timestamp = 1;
 bool SimpleClientMessage::has_timestamp() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }

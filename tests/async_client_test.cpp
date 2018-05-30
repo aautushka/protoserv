@@ -28,7 +28,7 @@ using EchoProtocol = meta::protocol <
 struct Echo : public module_base<Echo, EchoProtocol>
 {
     template <typename Message>
-    void onMessage(ClientConnection& conn, Message& msg)
+    void onMessage(ClientConnection& conn, Message msg)
     {
         send_message(conn, msg);
     }

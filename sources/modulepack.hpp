@@ -4,6 +4,7 @@
 #include "dispatch_table.hpp"
 #include "components.hpp"
 #include <string>
+#include <iostream>
 
 using application_server = protoserv::app_server;
 

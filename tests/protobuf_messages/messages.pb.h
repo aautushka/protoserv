@@ -1241,7 +1241,7 @@ class SimpleClientMessage : public ::google::protobuf::Message /* @@protoc_inser
 
   // accessors -------------------------------------------------------
 
-  // required int32 timestamp = 1;
+  // optional int32 timestamp = 1;
   bool has_timestamp() const;
   void clear_timestamp();
   static const int kTimestampFieldNumber = 1;
@@ -25877,7 +25877,7 @@ inline void Type9Message::set_data3(::google::protobuf::int32 value) {
 
 // SimpleClientMessage
 
-// required int32 timestamp = 1;
+// optional int32 timestamp = 1;
 inline bool SimpleClientMessage::has_timestamp() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }

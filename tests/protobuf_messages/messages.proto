@@ -42,7 +42,7 @@ message Type9Message {
 }
 
 message SimpleClientMessage {
-    required int32 timestamp = 1;
+    optional int32 timestamp = 1;
     optional string payload = 2;
 }
 message Type10Message {
