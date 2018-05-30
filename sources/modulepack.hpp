@@ -165,16 +165,16 @@ public:
 
     // @brief Sends protobuf message to the given client/server
     template <typename Connection, typename T>
-    static void send_message(Connection& conn, T& message)
+    static void send_message(Connection& conn, T&& message)
     {
-        using TT = std::remove_cv_t<T>;
+        using TT = std::decay_t<T>;
         auto messageId = meta::identify<Protocol, TT>();
         conn.send(messageId, message);
     }
 
     // @brief Sends protobuf message to the give client/server
     template <typename Connection, typename T>
-    static void send_message(Connection* conn, T& message)
+    static void send_message(Connection* conn, T&& message)
     {
         send_message(*conn, message);
     }

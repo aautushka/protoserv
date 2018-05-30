@@ -15,7 +15,7 @@ using Runner = test::Runner<T>;
 using Client = protoserv::async_client<test::SimpleClientMessage, test::Type6Message>;
 using TestProtocol = meta::complete_protocol<test::SimpleClientMessage>;
 
-struct ComponentFixture 
+struct component_fixture 
 {
     enum
     {
@@ -23,7 +23,7 @@ struct ComponentFixture
         TEST_TIMESTAMP = 121212
     };
 
-    ComponentFixture()
+    component_fixture()
     {
         testMessage.set_timestamp(TEST_TIMESTAMP);
     }
@@ -119,7 +119,7 @@ struct Component3
 } // namespace anonymous
 
 
-BOOST_FIXTURE_TEST_SUITE(ComponentTest, ComponentFixture, *boost::unit_test::enabled())
+BOOST_FIXTURE_TEST_SUITE(component_test, component_fixture, *boost::unit_test::enabled())
 
 BOOST_AUTO_TEST_CASE(calls_component_the_right_way)
 {
@@ -229,7 +229,7 @@ template <class Module>
 struct Component5
 {
     template <class Connection>
-    void onMessage(Connection& conn, test::SimpleClientMessage)
+    void onMessage(Connection& conn, test::SimpleClientMessage&)
     {
         Module::template call_component<Component4>(*this).make_reply(conn);
     }
@@ -344,7 +344,7 @@ template <class Module>
 struct Component8
 {
     template <class Connection>
-    void onMessage(Connection& conn, test::SimpleClientMessage)
+    void onMessage(Connection& conn, test::SimpleClientMessage&)
     {
         auto ts = Module::post_component(this, 123);
         test::SimpleClientMessage msg;

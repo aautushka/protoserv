@@ -51,7 +51,7 @@ inline void throw_with_buffer(const void* buf, int len)
 // @brief Calls component's onMessage(Message&) if present
 template <typename Msg, typename Module, typename Comp, typename Connection>
 auto call_on_message_alt_2(Comp& comp, Connection& conn, const void* buf, int len, int)
--> decltype(comp.onMessage(Msg()), void())
+-> decltype(comp.onMessage(std::declval<Msg&>()), void())
 {
     auto func = [&comp, buf, len]() -> decltype(auto)
     {
@@ -80,7 +80,7 @@ void call_on_message_alt_2(Comp&, Connection&, const void*, int, long) // NOLINT
 // @brief Calls component's onMessage(Connection*, Message&) if present or check the alternatives
 template <typename Msg, typename Module, typename Comp, typename Connection>
 auto call_on_message_alt(Comp& comp, Connection& conn, const void* buf, int len, int)
--> decltype(comp.onMessage(&conn, Msg()), void())
+-> decltype(comp.onMessage(&conn, std::declval<Msg&>()), void())
 {
     auto func = [&comp, &conn, buf, len]() -> decltype(auto)
     {
@@ -114,7 +114,7 @@ auto call_on_message_alt(Comp& comp, Connection& conn, const void* buf, int len,
 // 3. onMessage(Message&)
 template <typename Msg, typename Module, typename Comp, typename Connection>
 auto call_on_message(Comp& comp, Connection& conn, const void* buf, int len, int)
--> decltype(comp.onMessage(conn, Msg()), void())
+-> decltype(comp.onMessage(conn, std::declval<Msg&>()), void())
 {
     auto func = [&comp, &conn, buf, len]() -> decltype(auto)
     {
