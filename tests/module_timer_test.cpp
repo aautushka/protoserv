@@ -14,11 +14,11 @@ using Runner = test::Runner<T>;
 using Client = protoserv::async_client<test::SimpleClientMessage>;
 using Timer = protoserv::Timer;
 
-struct AppModuleTimerFixture 
+struct module_time_fixture 
 {
 };
 
-BOOST_FIXTURE_TEST_SUITE(AppModuleTimerTest, AppModuleTimerFixture, *boost::unit_test::enabled())
+BOOST_FIXTURE_TEST_SUITE(module_timer_test, module_time_fixture, *boost::unit_test::enabled())
 
 BOOST_AUTO_TEST_CASE(schedules_delayed_event)
 {

@@ -27,7 +27,7 @@ struct Echo : public module_base<Echo, EchoProtocol>
 template <typename T>
 using Runner = tests::Runner<T>;
 
-struct AsyncHandlerFixture
+struct async_handler_fixture
 {
     protoserv::async_client<EchoProtocol> client;
 
@@ -47,7 +47,7 @@ struct AsyncHandlerFixture
     }
 };
 
-BOOST_FIXTURE_TEST_SUITE(AsyncHandlerTest, AsyncHandlerFixture)
+BOOST_FIXTURE_TEST_SUITE(async_handler_test, async_handler_fixture)
 
 BOOST_AUTO_TEST_CASE(passes_message_via_async_handler)
 {

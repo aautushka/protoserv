@@ -6,7 +6,7 @@
 using protoserv::async_stdin;
 using protoserv::command;
 
-BOOST_AUTO_TEST_SUITE(async_stdinTest)
+BOOST_AUTO_TEST_SUITE(async_stdin_test)
 
 BOOST_AUTO_TEST_CASE(reads_command_from_input_stream)
 {

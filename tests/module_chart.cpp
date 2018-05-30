@@ -23,7 +23,7 @@ using TestProto = meta::proto<test::SimpleClientMessage>;
 using Client = protoserv::async_client<TestProto>;
 using test::EchoServer;
 
-struct AppModuleChartFixture
+struct module_chart_fixture
 {
 };
 
@@ -123,7 +123,7 @@ private:
 };
 
 
-BOOST_FIXTURE_TEST_SUITE(AppModuleChart, AppModuleChartFixture, *boost::unit_test::disabled())
+BOOST_FIXTURE_TEST_SUITE(module_chart, module_chart_fixture, *boost::unit_test::disabled())
 
 class AsioClient
 {

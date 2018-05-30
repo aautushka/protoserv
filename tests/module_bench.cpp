@@ -50,7 +50,7 @@ public:
 };
 } // namespace anonymous
 
-struct AppModuleBenchFixture
+struct module_bench_fixture
 {
     enum
     {
@@ -58,7 +58,7 @@ struct AppModuleBenchFixture
         TEST_TIMESTAMP = 121212
     };
 
-    AppModuleBenchFixture()
+    module_bench_fixture()
     {
         testMessage.set_timestamp(TEST_TIMESTAMP);
     }
@@ -147,7 +147,7 @@ private:
 };
 
 
-BOOST_FIXTURE_TEST_SUITE(AppModuleBench, AppModuleBenchFixture, *boost::unit_test::disabled())
+BOOST_FIXTURE_TEST_SUITE(module_bench, module_bench_fixture, *boost::unit_test::disabled())
 
 BOOST_AUTO_TEST_CASE(simple_sync_bench)
 {
