@@ -27,7 +27,7 @@ message Type6Message {
 }
 
 message Type7Message {
-    optional string data = 1;
+    optional bytes data = 1;
 }
 
 message Type8Message {

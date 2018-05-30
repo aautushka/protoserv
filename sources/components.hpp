@@ -271,14 +271,14 @@ void call_on_deinitialized(Module& mod, long) // NOLINT(runtime/int)
 
 // @brief Calls module's onConfiguratoin(Configuration&) if presnet
 template <typename Module, typename Configuration>
-auto call_on_configuration(Module& mod, Configuration& conf, int) ->
+auto call_on_configuration(Module& mod, Configuration&& conf, int) ->
 decltype(mod.onConfiguration(conf))
 {
     mod.onConfiguration(conf);
 }
 
 template <typename Module, typename Configuration>
-void call_on_configuration(Module&, Configuration&, long) // NOLINT(runtime/int)
+void call_on_configuration(Module&, Configuration&&, long) // NOLINT(runtime/int)
 {
 }
 

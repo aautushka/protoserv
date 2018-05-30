@@ -927,14 +927,14 @@ class Type7Message : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // optional string data = 1;
+  // optional bytes data = 1;
   bool has_data() const;
   void clear_data();
   static const int kDataFieldNumber = 1;
   const ::std::string& data() const;
   void set_data(const ::std::string& value);
   void set_data(const char* value);
-  void set_data(const char* value, size_t size);
+  void set_data(const void* value, size_t size);
   ::std::string* mutable_data();
   ::std::string* release_data();
   void set_allocated_data(::std::string* data);
@@ -25691,7 +25691,7 @@ inline void Type6Message::set_allocated_data(::std::string* data) {
 
 // Type7Message
 
-// optional string data = 1;
+// optional bytes data = 1;
 inline bool Type7Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -25719,7 +25719,7 @@ inline void Type7Message::set_data(const char* value) {
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:tests.Type7Message.data)
 }
-inline void Type7Message::set_data(const char* value, size_t size) {
+inline void Type7Message::set_data(const void* value, size_t size) {
   set_has_data();
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

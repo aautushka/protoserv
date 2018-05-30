@@ -5723,7 +5723,7 @@ void protobuf_AddDesc_messages_2eproto() {
     "\001(\003\"\034\n\014Type3Message\022\014\n\004data\030\001 \001(\010\"\034\n\014Typ"
     "e4Message\022\014\n\004data\030\001 \001(\002\"\034\n\014Type5Message\022"
     "\014\n\004data\030\001 \001(\001\"\034\n\014Type6Message\022\014\n\004data\030\001 "
-    "\001(\014\"\034\n\014Type7Message\022\014\n\004data\030\001 \001(\t\",\n\014Typ"
+    "\001(\014\"\034\n\014Type7Message\022\014\n\004data\030\001 \001(\014\",\n\014Typ"
     "e8Message\022\r\n\005data1\030\001 \001(\005\022\r\n\005data2\030\002 \001(\003\""
     ";\n\014Type9Message\022\r\n\005data1\030\001 \001(\005\022\r\n\005data2\030"
     "\002 \001(\005\022\r\n\005data3\030\003 \001(\005\"9\n\023SimpleClientMess"
@@ -8193,15 +8193,11 @@ bool Type7Message::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string data = 1;
+      // optional bytes data = 1;
       case 1: {
         if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_data()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->data().data(), this->data().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "tests.Type7Message.data");
         } else {
           goto handle_unusual;
         }
@@ -8234,13 +8230,9 @@ failure:
 void Type7Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:tests.Type7Message)
-  // optional string data = 1;
+  // optional bytes data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type7Message.data");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       1, this->data(), output);
   }
 
@@ -8254,14 +8246,10 @@ void Type7Message::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Type7Message::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:tests.Type7Message)
-  // optional string data = 1;
+  // optional bytes data = 1;
   if (has_data()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->data().data(), this->data().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tests.Type7Message.data");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         1, this->data(), target);
   }
 
@@ -8277,10 +8265,10 @@ int Type7Message::ByteSize() const {
 // @@protoc_insertion_point(message_byte_size_start:tests.Type7Message)
   int total_size = 0;
 
-  // optional string data = 1;
+  // optional bytes data = 1;
   if (has_data()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->data());
   }
 
@@ -8369,7 +8357,7 @@ void Type7Message::InternalSwap(Type7Message* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Type7Message
 
-// optional string data = 1;
+// optional bytes data = 1;
 bool Type7Message::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -8397,7 +8385,7 @@ void Type7Message::clear_data() {
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:tests.Type7Message.data)
 }
- void Type7Message::set_data(const char* value, size_t size) {
+ void Type7Message::set_data(const void* value, size_t size) {
   set_has_data();
   data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
