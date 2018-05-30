@@ -100,8 +100,10 @@ struct Component3
         deinitialized = true;
     }
 
-    void onConfiguration(const protoserv::Options& conf)
+    template <typename Config>
+    void onConfiguration(Config&& conf)
     {
+        std::cout << "configuration loaded\n";
         configured = true;
     }
 

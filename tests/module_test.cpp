@@ -220,7 +220,7 @@ public:
 
 } // namespace anonymous
 
-struct AppModuleFixture
+struct module_fixture
 {
     enum
     {
@@ -228,7 +228,7 @@ struct AppModuleFixture
         TEST_TIMESTAMP = 121212
     };
 
-    AppModuleFixture()
+    module_fixture()
     {
         testMessage.set_timestamp(TEST_TIMESTAMP);
     }
@@ -258,7 +258,7 @@ struct AppModuleFixture
     Client client;
 };
 
-BOOST_FIXTURE_TEST_SUITE(AppModuleTest, AppModuleFixture)
+BOOST_FIXTURE_TEST_SUITE(module_test, module_fixture)
 
 BOOST_AUTO_TEST_CASE(receives_server_response)
 {

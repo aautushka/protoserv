@@ -272,13 +272,13 @@ void call_on_deinitialized(Module& mod, long) // NOLINT(runtime/int)
 // @brief Calls module's onConfiguratoin(Configuration&) if presnet
 template <typename Module, typename Configuration>
 auto call_on_configuration(Module& mod, Configuration&& conf, int) ->
-decltype(mod.onConfiguration(conf))
+decltype(mod.onConfiguration(std::forward<Configuration>(conf)))
 {
-    mod.onConfiguration(conf);
+    mod.onConfiguration(std::forward<Configuration>(conf));
 }
 
 template <typename Module, typename Configuration>
-void call_on_configuration(Module&, Configuration&&, long) // NOLINT(runtime/int)
+void call_on_configuration(Module& mod, Configuration&& conf, long) // NOLINT(runtime/int)
 {
 }
 
@@ -420,14 +420,14 @@ void deinitialize_component(Aggregate& agg)
 
 // @brief Configures components
 template <typename Aggregate, typename Configuration>
-void configure_component(Aggregate&, const Configuration&) {}
+void configure_component(Aggregate&, Configuration&&) {}
 
 template <typename Aggregate, typename Configuration, class Component, class ... Cs>
-void configure_component(Aggregate& agg, const Configuration& conf)
+void configure_component(Aggregate& agg, Configuration&& conf)
 {
     const auto& comp = static_cast<const Component&>(agg);
-    call_on_configuration(comp, conf, 0);
-    configure_component<Aggregate, Configuration, Cs...>(agg, conf);
+    call_on_configuration(comp, std::forward<Configuration>(conf), 0);
+    configure_component<Aggregate, Configuration, Cs...>(agg, std::forward<Configuration>(conf));
 }
 
 //
@@ -512,9 +512,9 @@ struct component_aggregate : public Component<Module>...
 
     // @brief Configures all components
     template <typename Configuration>
-    void configure_component(const Configuration& conf)
+    void configure_component(Configuration&& conf)
     {
-        meta::configure_component<self_type, Configuration, Component<Module>...>(*this, conf);
+        meta::configure_component<self_type, Configuration, Component<Module>...>(*this, std::forward<Configuration>(conf));
     }
 
     // @brief Sends a message of arbitrary type to component, indended for component-to-component communication
@@ -570,9 +570,9 @@ public:
     }
 
     template <typename Configuration>
-    void configure_component(const Configuration& conf)
+    void configure_component(Configuration&& conf)
     {
-        aggregate_.configure_component(conf);
+        aggregate_.configure_component(std::forward<Configuration>(conf));
     }
 
     template <template <class> class Comp>
