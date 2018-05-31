@@ -34,16 +34,25 @@ struct server_events_fixture
 {
     enum
     {
-        SERVER_PORT = 5999,
+        INIT_SERVER_PORT = 5799,
         TEST_TIMESTAMP = 121212
     };
 
     server_events_fixture()
     {
         testMessage.set_timestamp(TEST_TIMESTAMP);
+        auto id = boost::unit_test::framework::current_test_case().p_id;
+        server_port = INIT_SERVER_PORT + (id % 100);
     }
 
     test::SimpleClientMessage testMessage;
+
+    uint16_t get_server_port() const
+    {
+        return server_port;
+    }
+
+    uint16_t server_port;
 };
 
 BOOST_FIXTURE_TEST_SUITE(server_events_test, server_events_fixture, *boost::unit_test::enabled())
@@ -65,7 +74,7 @@ BOOST_AUTO_TEST_CASE(server_acknowledges_new_client)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
     BOOST_CHECK_EQUAL(12345, message.timestamp());
@@ -101,7 +110,7 @@ BOOST_AUTO_TEST_CASE(server_is_notified_when_client_disconnects)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
     client.disconnect();
 
     BOOST_CHECK(server->waitDisconnected());
@@ -113,7 +122,7 @@ BOOST_AUTO_TEST_CASE(connects_to_another_server)
     {
         Server()
         {
-            connect_to_server("127.0.0.1", 5999);
+            connect_to_server("127.0.0.1", 6001); 
         }
 
         void onConnected(ServerConnection& conn)
@@ -125,7 +134,8 @@ BOOST_AUTO_TEST_CASE(connects_to_another_server)
     };
 
     Runner<EchoServer> echo;
-    echo.run_in_background(5999);
+    echo.run_in_background(6001);
+    echo.wait_until_server_ready();
 
     Runner<Server> srv;
     srv.run_in_background(6000);
@@ -139,7 +149,7 @@ BOOST_AUTO_TEST_CASE(disconnects_server)
     {
         Server()
         {
-            connect_to_server("127.0.0.1", 5999);
+            connect_to_server("127.0.0.1", 6002); 
         }
 
         void onDisconnected(ServerConnection& conn)
@@ -151,10 +161,11 @@ BOOST_AUTO_TEST_CASE(disconnects_server)
     };
 
     auto echo = std::make_unique<Runner<EchoServer>>();
-    echo->run_in_background(5999);
+    echo->run_in_background(6002);
+    echo->wait_until_server_ready();
 
     Runner<Server> srv;
-    srv.run_in_background(6000);
+    srv.run_in_background(6003);
 
     echo.reset();
     srv.join();
@@ -181,7 +192,7 @@ BOOST_AUTO_TEST_CASE(initializes_and_deinitializes_server)
     };
 
     Runner<Server> srv;
-    srv.run_in_background(5999);
+    srv.run_in_background(get_server_port());
     srv.join();
 
     BOOST_CHECK(srv->initialized);
@@ -201,7 +212,7 @@ BOOST_AUTO_TEST_CASE(loads_configuration)
     };
 
     Runner<Server> srv;
-    srv.run_in_background(5999);
+    srv.run_in_background(get_server_port());
     srv.join();
 
     BOOST_CHECK(srv->configured);
@@ -231,10 +242,10 @@ BOOST_AUTO_TEST_CASE(can_pass_connection_by_pointer)
     };
 
     Runner<Server> srv;
-    srv.run_in_background(5999);
+    srv.run_in_background(get_server_port());
 
     Client client;
-    client.connect(5999);
+    client.wait_connect(get_server_port());
     srv->send_message(client, testMessage);
     client.wait_message<test::SimpleClientMessage>();
 
@@ -262,10 +273,10 @@ BOOST_AUTO_TEST_CASE(handles_incoming_message_with_no_associated_connection)
     #pragma warning(default:4455)
 
     Runner<Server> srv;
-    srv.run_in_background(5999);
+    srv.run_in_background(get_server_port());
 
     Client client;
-    client.connect(5999);
+    client.wait_connect(get_server_port());
     srv->send_message(client, testMessage);
     std::this_thread::sleep_for(100ms);
 
@@ -293,7 +304,7 @@ BOOST_AUTO_TEST_CASE(notifies_disconnected_client_when_server_gets_stopped)
 
 
     protoserv::async_client<test::SimpleClientMessage> client;
-    client.connect(4999);
+    client.wait_connect(4999);
     client.send(testMessage);
 
     // Server may not be able to receive and process the message before join is called.

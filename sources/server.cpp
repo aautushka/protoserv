@@ -58,7 +58,7 @@ std::string get_opt(const Options& opts, std::string key, std::string default_va
 void app_server::run_server(const std::string&  app_name, const Options& opts)
 {
     auto ip = get_opt(opts, "Ip", "127.0.0.1");
-    auto port_str = get_opt(opts, "Port", "65535");
+    auto port_str = get_opt(opts, "Port", "0");
     auto port = boost::lexical_cast<uint16_t>(port_str);
 
 

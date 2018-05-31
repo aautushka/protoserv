@@ -50,13 +50,23 @@ public:
     }
 
     // @brief Connect to the remote endpoint
-    void connect(const std::string& ipAddr, uint16_t port)
+    void connect(const std::string& ipaddr, uint16_t port)
+    {
+        connect(ipaddr, port, 1);
+    }
+
+    void connect(const std::string& ipaddr, uint16_t port, int attempts)
     {
         assert(!session_);
 
-        auto ip = boost::asio::ip::address::from_string(ipAddr);
+        if (attempts < 0)
+        {
+            return;
+        }
+
+        auto ip = boost::asio::ip::address::from_string(ipaddr);
         auto endpoint = tcp::endpoint(ip, port);
-        auto it = resolver_.resolve(endpoint);
+        /* auto it = resolver_.resolve(endpoint); */
 
         session_ = std::make_unique<session_type>(tcp::socket(service_), *this);
 
@@ -64,9 +74,34 @@ public:
         socket.open(tcp::v4());
         socket.set_option(tcp::no_delay(true));
         socket.set_option(boost::asio::socket_base::linger(true, 0));
+
+        boost::system::error_code ec;
+        for (int i = 0; i < attempts - 1; ++i)
+        {
+            socket.connect(endpoint, ec);
+            if (!ec)
+            {
+                session_->connect(std::move(socket));
+                return;
+            }
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        }
+
         socket.connect(endpoint);
         session_->connect(std::move(socket));
     }
+
+    void wait_connect(const std::string& addr, uint16_t port)
+    {
+        connect(addr, port, 0x7fffffff);
+    }
+
+    void wait_connect(uint16_t port)
+    {
+        connect("127.0.0.1", port, 0x7fffffff);
+    }
+
 
     // @brief Disconnects client and closes all pending requests
     void disconnect()

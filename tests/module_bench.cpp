@@ -12,6 +12,7 @@ namespace test = tests;
 
 template <typename T>
 using Runner = test::Runner<T>;
+
 using TestProto = meta::proto<test::SimpleClientMessage>;
 using Client = protoserv::async_client<TestProto>;
 
@@ -54,30 +55,39 @@ struct module_bench_fixture
 {
     enum
     {
-        SERVER_PORT = 5999,
+        INIT_SERVER_PORT = 6001,
         TEST_TIMESTAMP = 121212
     };
 
     module_bench_fixture()
     {
         testMessage.set_timestamp(TEST_TIMESTAMP);
+
+        // add some randomness
+        auto id = boost::unit_test::framework::current_test_case().p_id;
+        server_port = INIT_SERVER_PORT + (id % 100);
     }
 
     void run_client()
     {
         Client client;
-        client.connect(SERVER_PORT);
+        client.connect(get_server_port());
         server->send_message(client, testMessage);
     }
 
     void client_connect()
     {
-        client.connect(SERVER_PORT);
+        client.connect(get_server_port());
     }
 
     void client_send_test_message()
     {
         server->send_message(client, testMessage);
+    }
+
+    uint16_t get_server_port() const
+    {
+        return server_port;
     }
 
     test::SimpleClientMessage testMessage;
@@ -86,7 +96,10 @@ struct module_bench_fixture
     // the order is essential
     Runner<MyServer> server;
     Client client;
+
+    uint16_t server_port = 0;
 };
+
 
 class Bandwidth
 {
@@ -151,7 +164,7 @@ BOOST_FIXTURE_TEST_SUITE(module_bench, module_bench_fixture, *boost::unit_test::
 
 BOOST_AUTO_TEST_CASE(simple_sync_bench)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     client_connect();
     client_send_test_message();
@@ -186,7 +199,7 @@ BOOST_AUTO_TEST_CASE(simple_sync_bench)
 
 BOOST_AUTO_TEST_CASE(simple_async_bench)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     client_connect();
     client_send_test_message();
@@ -218,7 +231,7 @@ BOOST_AUTO_TEST_CASE(simple_async_bench)
 BOOST_AUTO_TEST_CASE(async_correctness_test)
 {
     Runner<EchoServer> server;
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     client_connect();
 
@@ -279,7 +292,7 @@ BOOST_AUTO_TEST_CASE(proxy_bench)
         ClientConnection* client_connection_ = nullptr;
     };
 
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     Runner<MyProxy3> proxy;
     proxy.run_in_background(6000);
@@ -313,7 +326,7 @@ BOOST_AUTO_TEST_CASE(proxy_bench)
 
 BOOST_AUTO_TEST_CASE(bench_1kb_messages)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     client_connect();
 
@@ -346,7 +359,7 @@ BOOST_AUTO_TEST_CASE(bench_1kb_messages)
 
 BOOST_AUTO_TEST_CASE(concurrent_clients_bench)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     std::vector<std::thread> clients;
 
@@ -438,7 +451,7 @@ private:
 
 BOOST_AUTO_TEST_CASE(short_concurrent_client_sessions)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     std::vector<std::thread> clients;
 
@@ -489,7 +502,7 @@ BOOST_AUTO_TEST_CASE(short_concurrent_client_sessions)
 BOOST_AUTO_TEST_CASE(concurrent_clients_correctness_test)
 {
     Runner<EchoServer> server;
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     std::vector<std::shared_ptr<Client>> clients;
     std::vector<int> messageCounts;

@@ -19,7 +19,6 @@ struct component_fixture
 {
     enum
     {
-        SERVER_PORT = 5999,
         TEST_TIMESTAMP = 121212
     };
 
@@ -136,7 +135,7 @@ BOOST_AUTO_TEST_CASE(calls_component_the_right_way)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     server->send_message(client, testMessage);
     auto message = client.wait_message<test::SimpleClientMessage>();
@@ -157,7 +156,7 @@ BOOST_AUTO_TEST_CASE(talks_to_independent_components)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     server->send_message(client, testMessage);
     auto reply1 = client.wait_message<test::SimpleClientMessage>();
@@ -184,7 +183,7 @@ BOOST_AUTO_TEST_CASE(component_is_called_when_client_gets_connected_and_disconne
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
     client.disconnect();
     // Server may not be able to receive and process the message before join is called.
     std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -262,7 +261,7 @@ BOOST_AUTO_TEST_CASE(components_talk_to_one_another)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
     server->send_message(client, testMessage);
     auto message = client.wait_message<test::SimpleClientMessage>();
 
@@ -308,7 +307,7 @@ BOOST_AUTO_TEST_CASE(component_talks_to_server)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
     server->send_message(client, testMessage);
     auto message = client.wait_message<test::SimpleClientMessage>();
 
@@ -375,7 +374,7 @@ BOOST_AUTO_TEST_CASE(posts_componenent_message)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
     server->send_message(client, testMessage);
     auto message = client.wait_message<test::SimpleClientMessage>();
 
@@ -399,7 +398,7 @@ BOOST_AUTO_TEST_CASE(implicitly_forwards_component_reply)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
     server->send_message(client, testMessage);
     auto message = client.wait_message<test::SimpleClientMessage>();
 

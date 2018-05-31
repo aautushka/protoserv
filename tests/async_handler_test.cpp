@@ -82,13 +82,14 @@ BOOST_AUTO_TEST_CASE(passes_message_via_async_handler)
 
     Runner<Echo> echo;
     echo.run_in_background(4999);
+    echo.wait_until_server_ready();
 
     Runner<Proxy> proxy;
     proxy.run_in_background(5000);
 
     std::this_thread::sleep_for(200ms);
 
-    client.connect(5000);
+    client.wait_connect(5000);
     client.send(make_message(12345));
 
     auto msg = client.wait_message<tests::SimpleClientMessage>();
@@ -138,11 +139,12 @@ BOOST_AUTO_TEST_CASE(cancels_outstanding_requests_on_connection_failure)
 
     Runner<Echo> echo;
     echo.run_in_background(4999);
+    echo.wait_until_server_ready();
 
     Runner<Proxy> proxy;
     proxy.run_in_background(5000);
 
-    client.connect(5000);
+    client.wait_connect(5000);
     client.send(make_message(12345));
 
     using std::literals::chrono_literals::operator "" ms;
@@ -175,7 +177,7 @@ BOOST_AUTO_TEST_CASE(cancels_request_immediately_if_no_connection_established)
     Runner<Proxy> proxy;
     proxy.run_in_background(5000);
 
-    client.connect(5000);
+    client.wait_connect(5000);
     client.send(make_message(12345));
     using std::literals::chrono_literals::operator "" ms;
     std::this_thread::sleep_for(300ms);

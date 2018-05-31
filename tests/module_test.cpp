@@ -224,30 +224,39 @@ struct module_fixture
 {
     enum
     {
-        SERVER_PORT = 5999,
+        INIT_SERVER_PORT = 4999,
         TEST_TIMESTAMP = 121212
     };
 
     module_fixture()
     {
         testMessage.set_timestamp(TEST_TIMESTAMP);
+
+        // add some randomness
+        auto id = boost::unit_test::framework::current_test_case().p_id;
+        server_port = INIT_SERVER_PORT + (id % 100);
     }
 
     void run_client()
     {
         Client client;
-        client.connect(SERVER_PORT);
+        client.connect(get_server_port());
         server->send_message(client, testMessage);
     }
 
     void client_connect()
     {
-        client.connect(SERVER_PORT);
+        client.wait_connect(get_server_port());
     }
 
     void client_send_test_message()
     {
         server->send_message(client, testMessage);
+    }
+
+    uint16_t get_server_port() const
+    {
+        return server_port;
     }
 
     test::SimpleClientMessage testMessage;
@@ -256,13 +265,15 @@ struct module_fixture
     // the order is essential
     Runner<MyServer> server;
     Client client;
+
+    uint16_t server_port = 0;
 };
 
 BOOST_FIXTURE_TEST_SUITE(module_test, module_fixture)
 
 BOOST_AUTO_TEST_CASE(receives_server_response)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     client_connect(); // connect to port 5999
     client_send_test_message(); // send test message with TEST_TIMESTAMP
@@ -277,12 +288,12 @@ BOOST_AUTO_TEST_CASE(receives_server_response)
 
 BOOST_AUTO_TEST_CASE(connects_multiple_clients_in_succession)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     for (auto i = 0u; i < 2 * std::thread::hardware_concurrency(); ++i)
     {
         Client client;
-        client.connect(SERVER_PORT);
+        client.connect(get_server_port());
         server->send_message(client, testMessage);
         auto message = client.wait_message<test::SimpleClientMessage>();
         BOOST_CHECK_EQUAL(TEST_TIMESTAMP + 1, message.timestamp());
@@ -291,7 +302,7 @@ BOOST_AUTO_TEST_CASE(connects_multiple_clients_in_succession)
 
 BOOST_AUTO_TEST_CASE(connect_multiple_clients_in_parallel)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     //Client is not copyable now
     std::vector<std::shared_ptr<Client>> clients;
@@ -301,7 +312,7 @@ BOOST_AUTO_TEST_CASE(connect_multiple_clients_in_parallel)
         clients.emplace_back();
         auto& client = clients.back();
         client.reset(new Client);
-        client->connect(SERVER_PORT);
+        client->wait_connect(get_server_port());
     }
 
     for (auto& client : clients)
@@ -320,7 +331,7 @@ BOOST_AUTO_TEST_CASE(connect_multiple_clients_in_parallel)
 
 BOOST_AUTO_TEST_CASE(proxies_message)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     Runner<MyProxy> proxy;
     proxy.run_in_background(6000);
@@ -335,7 +346,7 @@ BOOST_AUTO_TEST_CASE(proxies_message)
 
 BOOST_AUTO_TEST_CASE(proxies_message_in_style)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     Runner<MyProxy2> proxy;
     proxy.run_in_background(6000);
@@ -350,7 +361,7 @@ BOOST_AUTO_TEST_CASE(proxies_message_in_style)
 
 BOOST_AUTO_TEST_CASE(proxies_message_by_proxy_server_with_global_message_handler)
 {
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     Runner<MyProxy3> proxy;
     proxy.run_in_background(6000);
@@ -366,7 +377,7 @@ BOOST_AUTO_TEST_CASE(proxies_message_by_proxy_server_with_global_message_handler
 BOOST_AUTO_TEST_CASE(talks_to_multi_message_server)
 {
     Runner<MyServer2> server;
-    server.run_in_background(SERVER_PORT);
+    server.run_in_background(get_server_port());
 
     client_connect();
 

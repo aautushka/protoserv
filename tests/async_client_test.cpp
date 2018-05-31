@@ -59,6 +59,19 @@ struct async_client_fixture
         return m;
     }
 
+    async_client_fixture()
+    {
+        // add some randomness
+        auto id = boost::unit_test::framework::current_test_case().p_id;
+        server_port = 3999 + (id % 100);
+    }
+
+    uint16_t get_server_port() const
+    {
+        return server_port;
+    }
+
+    uint16_t server_port = 0;
 };
 
 BOOST_FIXTURE_TEST_SUITE(async_client_test, async_client_fixture)
@@ -66,9 +79,9 @@ BOOST_FIXTURE_TEST_SUITE(async_client_test, async_client_fixture)
 BOOST_AUTO_TEST_CASE(receives_message)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
     client.send(make_message(12345));
 
     auto msg = client.wait_message<tests::SimpleClientMessage>();
@@ -78,9 +91,9 @@ BOOST_AUTO_TEST_CASE(receives_message)
 BOOST_AUTO_TEST_CASE(receives_multiple_messages)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
     client.send(make_message(12345));
     client.send(make_message(67890));
 
@@ -94,9 +107,9 @@ BOOST_AUTO_TEST_CASE(receives_multiple_messages)
 BOOST_AUTO_TEST_CASE(communicates_in_synchronous_fashion)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     client.send(make_message(12345));
     auto m1 = client.wait_message<tests::SimpleClientMessage>();
@@ -110,9 +123,9 @@ BOOST_AUTO_TEST_CASE(communicates_in_synchronous_fashion)
 BOOST_AUTO_TEST_CASE(receives_async_message)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
     client.send(make_message(12345));
 
     uint64_t timestamp = 0;
@@ -133,9 +146,9 @@ BOOST_AUTO_TEST_CASE(receives_async_message)
 BOOST_AUTO_TEST_CASE(receives_several_async_messages)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
     client.send(make_message(12345));
     client.send(make_message(67890));
 
@@ -166,9 +179,9 @@ BOOST_AUTO_TEST_CASE(receives_several_async_messages)
 BOOST_AUTO_TEST_CASE(cancels_pending_event)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     bool canceled = false;
     client.receive([&canceled](tests::SimpleClientMessage & msg, auto err)
@@ -186,9 +199,9 @@ BOOST_AUTO_TEST_CASE(cancels_pending_event)
 BOOST_AUTO_TEST_CASE(prevents_events_from_being_rescheduled_recursively_upon_a_cancelation_request)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     int called_times = 0;
     client.receive([this, &called_times](tests::SimpleClientMessage & msg, auto err)
@@ -207,13 +220,13 @@ BOOST_AUTO_TEST_CASE(prevents_events_from_being_rescheduled_recursively_upon_a_c
 BOOST_AUTO_TEST_CASE(cancels_requests_when_destructing_object)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
     bool canceled = false;
 
     {
         client_type client;
-        client.connect(4999);
+        client.wait_connect(get_server_port());
         client.receive([&canceled](tests::SimpleClientMessage & msg, auto err)
         {
             if (err)
@@ -229,12 +242,12 @@ BOOST_AUTO_TEST_CASE(cancels_requests_when_destructing_object)
 BOOST_AUTO_TEST_CASE(prevents_recursion_from_happening)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
     int called_times = 0;
     {
         client_type client;
-        client.connect(4999);
+        client.wait_connect(get_server_port());
 
         client.receive([&client, &called_times](tests::SimpleClientMessage & msg, auto err)
         {
@@ -252,9 +265,9 @@ BOOST_AUTO_TEST_CASE(prevents_recursion_from_happening)
 BOOST_AUTO_TEST_CASE(receives_messages_of_different_types)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     tests::Type1Message m1;
     m1.set_data(123);
@@ -281,9 +294,9 @@ BOOST_AUTO_TEST_CASE(receives_messages_of_different_types)
 BOOST_AUTO_TEST_CASE(handles_messages_of_different_types_asynchronously)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     bool type1_received = false;
     client.receive([&type1_received](tests::Type1Message & m, auto err)
@@ -308,10 +321,10 @@ BOOST_AUTO_TEST_CASE(handles_messages_of_different_types_asynchronously)
 BOOST_AUTO_TEST_CASE(handles_subprotocol)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
     async_client<meta::subp<EchoProtocol, tests::Type6Message>> client;
-    client.connect(4999);
+    client.wait_connect(get_server_port());
     client.send(make_message<tests::Type6Message>("hello world"));
 
     auto msg = client.wait_message<tests::Type6Message>();
@@ -321,10 +334,10 @@ BOOST_AUTO_TEST_CASE(handles_subprotocol)
 BOOST_AUTO_TEST_CASE(handles_subprotocol_asynchronously)
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
     async_client<meta::subp<EchoProtocol, tests::Type6Message>> client;
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     std::string response;
     client.receive([&response](tests::Type6Message & msg, auto err)
@@ -341,10 +354,10 @@ BOOST_AUTO_TEST_CASE(handles_subprotocol_asynchronously)
 BOOST_AUTO_TEST_CASE(async_client_correctness_test, *boost::unit_test::disabled())
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
     async_client<EchoProtocol> client;
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     int receive_count = 0;
     for (int i = 0; i < 1000000; ++i)
@@ -368,10 +381,10 @@ BOOST_AUTO_TEST_CASE(async_client_correctness_test, *boost::unit_test::disabled(
 BOOST_AUTO_TEST_CASE(interal_read_buffer_overflow_test, *boost::unit_test::disabled())
 {
     Runner<Echo> server;
-    server.run_in_background(4999);
+    server.run_in_background(get_server_port());
 
     async_client<EchoProtocol> client;
-    client.connect(4999);
+    client.wait_connect(get_server_port());
 
     int receive_count = 0;
     for (int i = 1; i < 65520; ++i)

@@ -36,7 +36,6 @@ struct server_fixture
 {
     enum
     {
-        SERVER_PORT = 5999,
         TEST_TIMESTAMP = 121212
     };
 
@@ -156,6 +155,7 @@ BOOST_AUTO_TEST_CASE(reconnects_to_server_after_connection_broken)
 
     Runner<Server> srv;
     srv.run_in_background(6000);
+    srv.wait_until_server_ready();
 
     for (int i = 0; i < 3; ++i)
     {
@@ -191,7 +191,7 @@ BOOST_AUTO_TEST_CASE(disconnects_inactive_client)
     srv.run_in_background(5999);
 
     Client client;
-    client.connect(5999);
+    client.wait_connect(5999);
     srv->send_message(client, testMessage);
     client.wait_message<test::SimpleClientMessage>();
 
@@ -257,7 +257,7 @@ BOOST_AUTO_TEST_CASE(holds_reference_to_a_session_preventing_it_from_destruction
     srv.run_in_background(5999);
 
     Client client;
-    client.connect(5999);
+    client.wait_connect(5999);
     srv->send_message(client, testMessage);
     client.wait_message<test::SimpleClientMessage>();
     client.disconnect();
@@ -300,7 +300,7 @@ BOOST_AUTO_TEST_CASE(attempts_to_send_a_message_to_a_dead_session)
     srv.run_in_background(5999);
 
     Client client;
-    client.connect(5999);
+    client.wait_connect(5999);
     srv->send_message(client, testMessage);
     client.wait_message<test::SimpleClientMessage>();
     client.disconnect();
@@ -341,7 +341,7 @@ BOOST_AUTO_TEST_CASE(no_server_events_despite_attemps_to_send_message_to_it)
     srv.run_in_background(5999);
 
     Client client;
-    client.connect(5999);
+    client.wait_connect(5999);
     srv->send_message(client, testMessage);
     client.wait_message<test::SimpleClientMessage>();
 
@@ -375,7 +375,7 @@ BOOST_AUTO_TEST_CASE(passes_user_data_across_events)
     srv.run_in_background(5999);
 
     Client client;
-    client.connect(5999);
+    client.wait_connect(5999);
     srv->send_message(client, testMessage);
     client.wait_message<test::SimpleClientMessage>();
     client.disconnect();
