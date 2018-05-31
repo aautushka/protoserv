@@ -425,7 +425,7 @@ void configure_component(Aggregate&, Configuration&&) {}
 template <typename Aggregate, typename Configuration, class Component, class ... Cs>
 void configure_component(Aggregate& agg, Configuration&& conf)
 {
-    const auto& comp = static_cast<const Component&>(agg);
+    auto& comp = static_cast<Component&>(agg);
     call_on_configuration(comp, std::forward<Configuration>(conf), 0);
     configure_component<Aggregate, Configuration, Cs...>(agg, std::forward<Configuration>(conf));
 }

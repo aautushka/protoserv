@@ -318,7 +318,7 @@ public:
             dispatch_deinitialized();
         };
 
-        onConfigurationLoaded = [this](const auto & conf)
+        onConfigurationLoaded = [this](auto && conf)
         {
             dispatch_configuration(conf);
         };

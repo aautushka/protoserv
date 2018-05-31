@@ -103,7 +103,6 @@ struct Component3
     template <typename Config>
     void onConfiguration(Config&& conf)
     {
-        std::cout << "configuration loaded\n";
         configured = true;
     }
 
