@@ -40,7 +40,7 @@ BOOST_AUTO_TEST_CASE(schedules_delayed_event)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
     BOOST_CHECK_EQUAL(12345, message.timestamp());
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(schedules_recurring_event)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
     BOOST_CHECK_EQUAL(12345, message.timestamp());
@@ -116,7 +116,7 @@ BOOST_AUTO_TEST_CASE(creates_timer)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
     BOOST_CHECK_EQUAL(12345, message.timestamp());
@@ -159,7 +159,7 @@ BOOST_AUTO_TEST_CASE(generates_multiple_timer_events)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
     BOOST_CHECK_EQUAL(6789, message.timestamp());
@@ -194,7 +194,7 @@ BOOST_AUTO_TEST_CASE(stops_timer)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
 
     std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
@@ -234,7 +234,7 @@ BOOST_AUTO_TEST_CASE(resumes_timer)
     server.run_in_background(4999);
 
     Client client;
-    client.connect(4999);
+    client.wait_connect(4999);
     std::this_thread::sleep_for(std::chrono::milliseconds(50));
     client.disconnect();
     std::this_thread::sleep_for(std::chrono::milliseconds(50));

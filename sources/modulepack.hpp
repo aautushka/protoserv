@@ -195,9 +195,9 @@ public:
         auto client = std::make_shared<Client<Handler>>(handler);
         auto ptr = client.get();
         auto& conn = connect_to_server(ip, port,
-                                       [ptr](auto & conn, auto & message)
+                                       [ptr](auto & conn, auto && message)
         {
-            ptr->handle_message(conn, message);
+            ptr->handle_message(conn, std::forward<decltype(message)>(message));
         },
         [ptr](auto & conn)
         {

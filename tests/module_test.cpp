@@ -157,7 +157,7 @@ public:
 
     MyProxy()
     {
-        client_ = std::move(handle_server_sync<MyServerHandler>(*this, "127.0.0.1", 5999));
+        client_ = std::move(handle_server_sync<MyServerHandler>(*this, "127.0.0.1", 7001));
     }
 
     void onMessage(ClientConnection& conn, test::SimpleClientMessage& msg)
@@ -177,7 +177,7 @@ class MyProxy2 : public module_base<MyProxy2, test::SimpleClientMessage>
 public:
     MyProxy2()
     {
-        server_connection_ = std::move(handle_server_sync<MyProxy2>(*this, "127.0.0.1", 5999));
+        server_connection_ = std::move(handle_server_sync<MyProxy2>(*this, "127.0.0.1", 7002));
     }
 
     void onMessage(ClientConnection& conn, test::SimpleClientMessage& msg)
@@ -200,7 +200,7 @@ class MyProxy3 : public module_base<MyProxy3, test::SimpleClientMessage>
 public:
     MyProxy3()
     {
-        server_connection_ = &connect_to_server("127.0.0.1", 5999);
+        server_connection_ = &connect_to_server("127.0.0.1", 7003);
     }
 
     void onMessage(ClientConnection& conn, test::SimpleClientMessage& msg)
@@ -240,7 +240,7 @@ struct module_fixture
     void run_client()
     {
         Client client;
-        client.connect(get_server_port());
+        client.wait_connect(get_server_port());
         server->send_message(client, testMessage);
     }
 
@@ -293,7 +293,7 @@ BOOST_AUTO_TEST_CASE(connects_multiple_clients_in_succession)
     for (auto i = 0u; i < 2 * std::thread::hardware_concurrency(); ++i)
     {
         Client client;
-        client.connect(get_server_port());
+        client.wait_connect(get_server_port());
         server->send_message(client, testMessage);
         auto message = client.wait_message<test::SimpleClientMessage>();
         BOOST_CHECK_EQUAL(TEST_TIMESTAMP + 1, message.timestamp());
@@ -331,13 +331,15 @@ BOOST_AUTO_TEST_CASE(connect_multiple_clients_in_parallel)
 
 BOOST_AUTO_TEST_CASE(proxies_message)
 {
-    server.run_in_background(get_server_port());
+    server.run_in_background(7001);
+    server.wait_until_server_ready();
 
     Runner<MyProxy> proxy;
-    proxy.run_in_background(6000);
+    proxy.run_in_background(6001);
+    proxy.wait_until_server_ready();
 
     Client client;
-    client.connect(6000);
+    client.wait_connect(6001);
     proxy->send_message(client, testMessage);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
@@ -346,13 +348,15 @@ BOOST_AUTO_TEST_CASE(proxies_message)
 
 BOOST_AUTO_TEST_CASE(proxies_message_in_style)
 {
-    server.run_in_background(get_server_port());
+    server.run_in_background(7002);
+    server.wait_until_server_ready();
 
     Runner<MyProxy2> proxy;
-    proxy.run_in_background(6000);
+    proxy.run_in_background(6002);
+    proxy.wait_until_server_ready();
 
     Client client;
-    client.connect(6000);
+    client.wait_connect(6002);
     proxy->send_message(client, testMessage);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
@@ -361,13 +365,15 @@ BOOST_AUTO_TEST_CASE(proxies_message_in_style)
 
 BOOST_AUTO_TEST_CASE(proxies_message_by_proxy_server_with_global_message_handler)
 {
-    server.run_in_background(get_server_port());
+    server.run_in_background(7003);
+    server.wait_until_server_ready();
 
     Runner<MyProxy3> proxy;
-    proxy.run_in_background(6000);
+    proxy.run_in_background(6003);
+    proxy.wait_until_server_ready();
 
     Client client;
-    client.connect(6000);
+    client.wait_connect(6003);
     proxy->send_message(client, testMessage);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
@@ -451,7 +457,7 @@ BOOST_AUTO_TEST_CASE(implicitly_forwards_return_value_to_client)
     server.run_in_background(6000);
 
     Client client;
-    client.connect(6000);
+    client.wait_connect(6000);
     server->send_message(client, testMessage);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
@@ -472,7 +478,7 @@ BOOST_AUTO_TEST_CASE(implicitly_forwards_return_value_to_client_alternative_synt
     server.run_in_background(6000);
 
     Client client;
-    client.connect(6000);
+    client.wait_connect(6000);
     server->send_message(client, testMessage);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
@@ -493,7 +499,7 @@ BOOST_AUTO_TEST_CASE(implicitly_forwards_return_value_to_client_alternative_synt
     server.run_in_background(6000);
 
     Client client;
-    client.connect(6000);
+    client.wait_connect(6000);
     server->send_message(client, testMessage);
 
     auto message = client.wait_message<test::SimpleClientMessage>();
