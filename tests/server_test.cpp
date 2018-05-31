@@ -224,9 +224,11 @@ BOOST_AUTO_TEST_CASE(disconnects_inactive_server)
 
     Runner<Server> srv;
     srv.run_in_background(5999);
+    srv.wait_until_server_ready();
 
     Runner<Proxy> prox;
     prox.run_in_background(6000);
+    prox.wait_until_server_ready();
 
     prox->async_disconnect_inactive_servers(std::chrono::microseconds(1));
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
